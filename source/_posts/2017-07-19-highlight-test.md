@@ -1,5 +1,6 @@
 ---
 title: Highlight Test
+category: test
 ---
 
 This is a highlight test.
