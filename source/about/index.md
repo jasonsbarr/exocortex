@@ -6,9 +6,9 @@ date: 2020-01-26 14:51:31
 What is meant by this strange word, exocortex? First, a definition:
 
 {% blockquote Bionic Gate http://www.bionicgate.com/exocortex-your-brain-on-internet/ Exocortex (Your Brain On Internet) %}
-An exocortex is a theoretical artificial external information processing system that would augment a brain’s biological high-level cognitive processes.
+An exocortex is a theoretical artificial external information processing system that would augment a brain's biological high-level cognitive processes.
 
-An individual’s exocortex would be composed of external memory modules, processors, IO devices and software systems that would interact with, and augment, a person’s biological brain. Typically this interaction is described as being conducted through a direct brain-computer interface, making these extensions functionally part of the individual’s mind.
+An individual's exocortex would be composed of external memory modules, processors, IO devices and software systems that would interact with, and augment, a person's biological brain. Typically this interaction is described as being conducted through a direct brain-computer interface, making these extensions functionally part of the individual's mind.
 {% endblockquote %}
 
 # exocortex is an extension of my brain
