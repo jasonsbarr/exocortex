@@ -1,13 +1,20 @@
 ---
-title: "Basic text markup with HTML"
+title: Basic text markup with HTML
 tags:
   - web development
   - feynman technique
 categories:
-  - [series, web dev from the beginning]
-  - [web development, front-end, html]
+  - - series
+    - web dev from the beginning
+  - - web development
+    - front-end
+    - html
+date: 2020-01-27 16:28:16
 ---
+
 The most common task you'll perform with HTML is marking up text. HTML gives structure and meaning, also known as semantics, to plain text.
+
+<!-- more -->
 
 # Marking up text: the basics
 
@@ -17,7 +24,7 @@ Headings and paragraphs are the most basic way to structure text in HTML. Lists 
 
 Headings and paragraphs give textual content a structural hierarchy from the top-level heading down to the bottom-level text itself.
 
-Headings start with h1 and include numbers all the way to h6. The paragraph element is simply a p.
+Headings start with <b>h1</b> and include numbers all the way to <b>h6</b>. The paragraph element is simply a <b>p</b>.
 
 ### Heading and paragraph examples
 
@@ -43,11 +50,11 @@ Headings start with h1 and include numbers all the way to h6. The paragraph elem
 
 ### Semantics vs. presentation
 
-Headings are bold by default and descend in size from h1 (the largest) to h6 (the smallest); however, you should _not_ depend on presentation to know which element is which.
+Headings are bold by default and descend in size from <b>h1</b> (the largest) to <b>h6</b> (the smallest); however, you should _not_ depend on presentation to know which element is which.
 
 Any element that contains text can be styled to look like a default heading, but those elements would lack the **semantic** qualities of actual headings. They would not be useful to screen readers (for visually impaired users), search crawlers (important for search rankings), or other clients you need to consider when building web pages.
 
-They might look right, but your eyes can deceive you. Consider a span element styled the following way:
+They might look right, but your eyes can deceive you. Consider a <b>span</b> element styled the following way:
 
 ```html
 <span style="font-size: 32px; font-weight: bold; margin: 21px 0; display: block;">Is this a top level heading?</span>
@@ -57,7 +64,7 @@ This span will look _identical_ to a top-level heading's default styles:
 
 <span style="font-size: 32px; font-weight: bold; margin: 21px 0; display: block;">Is this a top level heading?</span>
 
-However, a span element is just a container for text; it has no semantics at all.
+However, a <b>span</b> element is just a container for text; it has no semantics at all.
 
 ### Structural hierarchy
 
@@ -91,7 +98,7 @@ You use an unordered list when the order of the items doesn't matter for the pur
 
 A shopping list is unordered; it doesn't matter what order you get the items in as long as you get them.
 
-To mark up an unordered list, enclose the list in a ul element. Then use an li element for each individual list item.
+To mark up an unordered list, enclose the list in a <b>ul</b> element. Then use an <b>li</b> element for each individual list item.
 
 ### Example: a shopping list
 
@@ -117,7 +124,7 @@ To mark up an unordered list, enclose the list in a ul element. Then use an li e
 
 Use an ordered list when the order of the items _does_ matter. For example, if you're giving turn-by-turn directions to your house you'd use an ordered list.
 
-To mark up an ordered list, enclose the list in an ol element. Then wrap each individual item in an li element, just like with an unordered list.
+To mark up an ordered list, enclose the list in an <b>ol</b> element. Then wrap each individual item in an <b>li</b> element, just like with an unordered list.
 
 ### Example: directions
 
@@ -145,7 +152,7 @@ To mark up an ordered list, enclose the list in an ol element. Then wrap each in
 
 ## Content inside an li and nesting lists
 
-You can include any additional HTML you need inside an li element.
+You can include any additional HTML you need inside an <b>li</b> element.
 
 If your list items need multiple paragraphs with images and multimedia, you can do that.
 
@@ -185,11 +192,11 @@ You can also nest a list inside another list this way.
 
 The next 2 elements are used to mark text that's emphasized or important.
 
-The em element is used for text meant to be *em*phasized, and the strong element is for text that is **strong**ly important.
+The <b>em</b> element is used for text meant to be *em*phasized, and the <b>strong</b> element is for text that is **strong**ly important.
 
 A good rule of thumb for these is to read the text in your mind or even say it aloud. Consider using one of these elements wherever you find yourself emphasizing the words.
 
-Note that, while the default styling for these elements is to _italicize_ em and make strong *bold*, the elements are semantic, not presentational. They could be styled differently and still have the same meaning.
+Note that, while the default styling for these elements is to _italicize_ <b>em</b> and make <b>strong</b> *bold*, the elements are semantic, not presentational. They could be styled differently and still have the same meaning.
 
 ### Example
 
@@ -217,10 +224,10 @@ Unfortunately, these elements' meanings in the official specification can be con
 
 Simply use each of them when you would expect to see italics, bold, or underlining in a written text.
 
-Use i to italicize foreign words, or words that are intended to be heard in a different voice&mdash;e.g. a person changes from speaking aloud to thinking.
+Use <b>i</b> to italicize foreign words, or words that are intended to be heard in a different voice&mdash;e.g. a person changes from speaking aloud to thinking.
 
-Use b for things like keywords and product names.
+Use <b>b</b> for things like keywords and product names.
 
-Use u for things like spelling errors where you would expect the text to be underlined.
+Use <b>u</b> for things like spelling errors where you would expect the text to be underlined.
 
-Be careful with u, though! Web users are strongly conditioned to expect underlined text to be a link. You might want to restyle u elements so the line is dashed or squiggly or something else so it's clear the user is not supposed to click the text.
+Be careful with u, though! Web users are strongly conditioned to expect underlined text to be a link. You might want to restyle <b>u</b> elements so the line is dashed or squiggly or something else so it's clear the user is not supposed to click the text.

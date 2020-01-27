@@ -17,6 +17,8 @@ I've been doing web development in some form since I was 15 years old, when I bu
 
 That was in spring 1995, before JavaScript was a twinkle in Brendan Eich's eye or the W3C released the first CSS recommendation.
 
+<!-- more -->
+
 I'd like to be able to say I kept up with the latest and greatest web programming techniques my whole life after that. I could tell you I was a ninja web programmer before I turned 20, but that would be a lie.
 
 I did keep building websites for campus and community groups, though, and in 2009 I finally started learning to do for-real web development.
