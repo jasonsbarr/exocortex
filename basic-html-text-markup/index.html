@@ -1,0 +1,599 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 4.2.0">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+<link rel="stylesheet" href="/lib/font-awesome/css/font-awesome.min.css">
+
+
+<script id="hexo-configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    hostname: new URL('https://exocortex.jasonbarr.dev').hostname,
+    root: '/',
+    scheme: 'Mist',
+    version: '7.7.0',
+    exturl: false,
+    sidebar: {"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},
+    copycode: {"enable":false,"show_result":false,"style":null},
+    back2top: {"enable":true,"sidebar":false,"scrollpercent":false},
+    bookmark: {"enable":false,"color":"#222","save":"auto"},
+    fancybox: false,
+    mediumzoom: false,
+    lazyload: false,
+    pangu: false,
+    comments: {"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},
+    algolia: {
+      appID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    },
+    localsearch: {"enable":false,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},
+    path: '',
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}}
+  };
+</script>
+
+  <meta name="description" content="The most common task you&#39;ll perform with HTML is marking up text. HTML gives structure and meaning, also known as semantics, to plain text.">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Basic text markup with HTML">
+<meta property="og:url" content="https://exocortex.jasonbarr.dev/basic-html-text-markup/index.html">
+<meta property="og:site_name" content="exocortex">
+<meta property="og:description" content="The most common task you&#39;ll perform with HTML is marking up text. HTML gives structure and meaning, also known as semantics, to plain text.">
+<meta property="og:locale" content="en_US">
+<meta property="article:published_time" content="2020-01-27T22:28:16.000Z">
+<meta property="article:modified_time" content="2020-01-27T22:28:16.570Z">
+<meta property="article:author" content="Jason Barr">
+<meta property="article:tag" content="web development">
+<meta property="article:tag" content="feynman technique">
+<meta name="twitter:card" content="summary">
+
+<link rel="canonical" href="https://exocortex.jasonbarr.dev/basic-html-text-markup/">
+
+
+<script id="page-configurations">
+  // https://hexo.io/docs/variables.html
+  CONFIG.page = {
+    sidebar: "",
+    isHome: false,
+    isPost: true
+  };
+</script>
+
+  <title>Basic text markup with HTML | exocortex</title>
+  
+
+
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-header { opacity: initial; }
+
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div class="container use-motion">
+    <div class="headband"></div>
+
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-meta">
+
+    <div>
+      <a href="/" class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">exocortex</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+        <h1 class="site-subtitle" itemprop="description">the extended brain of jason barr</h1>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="Toggle navigation bar">
+      <span class="toggle-line toggle-line-first"></span>
+      <span class="toggle-line toggle-line-middle"></span>
+      <span class="toggle-line toggle-line-last"></span>
+    </div>
+  </div>
+</div>
+
+
+<nav class="site-nav">
+  
+  <ul id="menu" class="menu">
+        <li class="menu-item menu-item-home">
+
+    <a href="/" rel="section"><i class="fa fa-fw fa-home"></i>Home</a>
+
+  </li>
+        <li class="menu-item menu-item-about">
+
+    <a href="/about/" rel="section"><i class="fa fa-fw fa-user"></i>About</a>
+
+  </li>
+        <li class="menu-item menu-item-categories">
+
+    <a href="/categories/" rel="section"><i class="fa fa-fw fa-th"></i>Categories</a>
+
+  </li>
+        <li class="menu-item menu-item-archives">
+
+    <a href="/archives/" rel="section"><i class="fa fa-fw fa-archive"></i>Archives</a>
+
+  </li>
+  </ul>
+
+</nav>
+</div>
+    </header>
+
+    
+  <div class="back-to-top">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+  <div class="reading-progress-bar"></div>
+
+
+    <main class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+
+          <div class="content">
+            
+
+  <div class="posts-expand">
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block " lang="en">
+    <link itemprop="mainEntityOfPage" href="https://exocortex.jasonbarr.dev/basic-html-text-markup/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="https://avatars2.githubusercontent.com/u/19394818">
+      <meta itemprop="name" content="Jason Barr">
+      <meta itemprop="description" content="the extended brain of jason barr">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="exocortex">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          Basic text markup with HTML
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              <span class="post-meta-item-text">Posted on</span>
+
+              <time title="Created: 2020-01-27 16:28:16" itemprop="dateCreated datePublished" datetime="2020-01-27T16:28:16-06:00">2020-01-27</time>
+            </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">In</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/web-development/" itemprop="url" rel="index">
+                    <span itemprop="name">web development</span>
+                  </a>
+                </span>
+                  , 
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/series/" itemprop="url" rel="index">
+                    <span itemprop="name">series</span>
+                  </a>
+                </span>
+                  , 
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/series/web-dev-from-the-beginning/" itemprop="url" rel="index">
+                    <span itemprop="name">web dev from the beginning</span>
+                  </a>
+                </span>
+                  , 
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/web-development/front-end/" itemprop="url" rel="index">
+                    <span itemprop="name">front-end</span>
+                  </a>
+                </span>
+                  , 
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/web-development/front-end/html/" itemprop="url" rel="index">
+                    <span itemprop="name">html</span>
+                  </a>
+                </span>
+            </span>
+
+          <br>
+            <span class="post-meta-item" title="Symbols count in article">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-file-word-o"></i>
+              </span>
+                <span class="post-meta-item-text">Symbols count in article: </span>
+              <span>7.4k</span>
+            </span>
+            <span class="post-meta-item" title="Reading time">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-clock-o"></i>
+              </span>
+                <span class="post-meta-item-text">Reading time &asymp;</span>
+              <span>7 mins.</span>
+            </span>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+        <p>The most common task you&#39;ll perform with HTML is marking up text. HTML gives structure and meaning, also known as semantics, to plain text.</p>
+<a id="more"></a>
+
+<h1 id="Marking-up-text-the-basics"><a href="#Marking-up-text-the-basics" class="headerlink" title="Marking up text: the basics"></a>Marking up text: the basics</h1><p>Headings and paragraphs are the most basic way to structure text in HTML. Lists are also very common. You can also mark up text inside a paragraph or other element to give it emphasis or some other shade of meaning.</p>
+<h2 id="Headings-and-paragraphs"><a href="#Headings-and-paragraphs" class="headerlink" title="Headings and paragraphs"></a>Headings and paragraphs</h2><p>Headings and paragraphs give textual content a structural hierarchy from the top-level heading down to the bottom-level text itself.</p>
+<p>Headings start with <b>h1</b> and include numbers all the way to <b>h6</b>. The paragraph element is simply a <b>p</b>.</p>
+<h3 id="Heading-and-paragraph-examples"><a href="#Heading-and-paragraph-examples" class="headerlink" title="Heading and paragraph examples"></a>Heading and paragraph examples</h3><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">h1</span>&gt;</span>This is the top-level heading<span class="tag">&lt;/<span class="name">h1</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;<span class="name">p</span>&gt;</span>This text goes under the top-level heading, but not under any subheading.<span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;<span class="name">h2</span>&gt;</span>This is the first subheading<span class="tag">&lt;/<span class="name">h2</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;<span class="name">p</span>&gt;</span>Here is some more text that describes something relevant to the subheading.<span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;<span class="name">h3</span>&gt;</span>This is a nested subheading<span class="tag">&lt;/<span class="name">h3</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;<span class="name">p</span>&gt;</span>The nested subheading is for content related to the h2 subheading, but important enough to merit its own subheading.<span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;<span class="name">h3</span>&gt;</span>You can have multiple subheadings on a page<span class="tag">&lt;/<span class="name">h3</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;<span class="name">p</span>&gt;</span>In fact, having multiple subheadings can make your content far easier to read.<span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;<span class="name">p</span>&gt;</span>In most cases you should only have one top-level h1 heading, though. It should communicate the page's main topic or purpose.<span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<h3 id="Semantics-vs-presentation"><a href="#Semantics-vs-presentation" class="headerlink" title="Semantics vs. presentation"></a>Semantics vs. presentation</h3><p>Headings are bold by default and descend in size from <b>h1</b> (the largest) to <b>h6</b> (the smallest); however, you should <em>not</em> depend on presentation to know which element is which.</p>
+<p>Any element that contains text can be styled to look like a default heading, but those elements would lack the <strong>semantic</strong> qualities of actual headings. They would not be useful to screen readers (for visually impaired users), search crawlers (important for search rankings), or other clients you need to consider when building web pages.</p>
+<p>They might look right, but your eyes can deceive you. Consider a <b>span</b> element styled the following way:</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">span</span> <span class="attr">style</span>=<span class="string">"font-size: 32px; font-weight: bold; margin: 21px 0; display: block;"</span>&gt;</span>Is this a top level heading?<span class="tag">&lt;/<span class="name">span</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<p>This span will look <em>identical</em> to a top-level heading&#39;s default styles:</p>
+<p><span style="font-size: 32px; font-weight: bold; margin: 21px 0; display: block;">Is this a top level heading?</span></p>
+<p>However, a <b>span</b> element is just a container for text; it has no semantics at all.</p>
+<h3 id="Structural-hierarchy"><a href="#Structural-hierarchy" class="headerlink" title="Structural hierarchy"></a>Structural hierarchy</h3><p>The heading and paragraph elements give the text on your page a structured hierarchy. This hierarchy doesn&#39;t just give your page an appearance that matches the relative importance of each part of the document (when styled appropriately); it also gives the text semantics that convey the underlying meaning to clients that consume the page.</p>
+<p>Whether or not the hierarchy underlying the text is visible to human eyes depends on if the page is styled properly or not. Other clients, including your browser, will know.</p>
+<p>Screen readers use a page&#39;s semantic hierarchy to give visually-impaired users an outline of the page&#39;s content before they read the rest of the page.</p>
+<p>A document that isn&#39;t properly marked up won&#39;t have an outline. The only way for them to know what it contains would be to read the entire page to find out. Needless to say, given the vast array of content available to your users, they&#39;re not likely to stay long if that&#39;s the case.</p>
+<p>A properly structured hierarchy also helps search crawlers understand more fully what your page is about.</p>
+<p>That way it can index the page properly and show it to search users as a result when it&#39;s relevant to their search.</p>
+<p>Search engines are a major driver of traffic for websites, so if you&#39;re working for a business or client you&#39;ll want to make sure to take advantage of the best techniques for getting your page indexed correctly.</p>
+<p>Making sure you properly arrange headings and paragraphs to mark up your text content will help everyone get the most benefit from your web page.</p>
+<h1 id="Lists"><a href="#Lists" class="headerlink" title="Lists"></a>Lists</h1><p>After headings and paragraphs, lists may be the most common kind of text markup.</p>
+<p>Lists are all over the place: shopping lists, packing lists, lists of directions, and the list goes on.</p>
+<p>The two most common list types in HTML are unordered and ordered lists.</p>
+<h2 id="Unordered-lists"><a href="#Unordered-lists" class="headerlink" title="Unordered lists"></a>Unordered lists</h2><p>You use an unordered list when the order of the items doesn&#39;t matter for the purpose of the list.</p>
+<p>A shopping list is unordered; it doesn&#39;t matter what order you get the items in as long as you get them.</p>
+<p>To mark up an unordered list, enclose the list in a <b>ul</b> element. Then use an <b>li</b> element for each individual list item.</p>
+<h3 id="Example-a-shopping-list"><a href="#Example-a-shopping-list" class="headerlink" title="Example: a shopping list"></a>Example: a shopping list</h3><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">ul</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">li</span>&gt;</span>A loaf of bread<span class="tag">&lt;/<span class="name">li</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">li</span>&gt;</span>A container of milk<span class="tag">&lt;/<span class="name">li</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">li</span>&gt;</span>A stick of butter<span class="tag">&lt;/<span class="name">li</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">ul</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<h3 id="The-resulting-list"><a href="#The-resulting-list" class="headerlink" title="The resulting list"></a>The resulting list</h3><div style="border: 1px solid black; margin-bottom: 16px; padding: 0 24px;">
+  <ul>
+    <li>A loaf of bread</li>
+    <li>A container of milk</li>
+    <li>A stick of butter</li>
+  </ul>
+</div>
+
+<h2 id="Ordered-lists"><a href="#Ordered-lists" class="headerlink" title="Ordered lists"></a>Ordered lists</h2><p>Use an ordered list when the order of the items <em>does</em> matter. For example, if you&#39;re giving turn-by-turn directions to your house you&#39;d use an ordered list.</p>
+<p>To mark up an ordered list, enclose the list in an <b>ol</b> element. Then wrap each individual item in an <b>li</b> element, just like with an unordered list.</p>
+<h3 id="Example-directions"><a href="#Example-directions" class="headerlink" title="Example: directions"></a>Example: directions</h3><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">ol</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">li</span>&gt;</span>Pull out of the parking lot<span class="tag">&lt;/<span class="name">li</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">li</span>&gt;</span>Turn left onto Broadway<span class="tag">&lt;/<span class="name">li</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">li</span>&gt;</span>Drive east for 3.2 miles<span class="tag">&lt;/<span class="name">li</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">li</span>&gt;</span>Turn left onto Barker Ave.<span class="tag">&lt;/<span class="name">li</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">li</span>&gt;</span>The house, 1422 Barker Ave., will be on your left after about 1/4 mile<span class="tag">&lt;/<span class="name">li</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">ol</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<h3 id="The-resulting-list-1"><a href="#The-resulting-list-1" class="headerlink" title="The resulting list"></a>The resulting list</h3><div style="border: 1px solid black; margin-bottom: 16px; padding: 0 24px;">
+  <ol>
+    <li>Pull out of the parking lot</li>
+    <li>Turn left onto Broadway</li>
+    <li>Drive east for 3.2 miles</li>
+    <li>Turn left onto Barker Ave.</li>
+    <li>The house, 1422 Barker Ave., will be on your left after about 1/4 mile</li>
+  </ol>
+</div>
+
+<h2 id="Content-inside-an-li-and-nesting-lists"><a href="#Content-inside-an-li-and-nesting-lists" class="headerlink" title="Content inside an li and nesting lists"></a>Content inside an li and nesting lists</h2><p>You can include any additional HTML you need inside an <b>li</b> element.</p>
+<p>If your list items need multiple paragraphs with images and multimedia, you can do that.</p>
+<p>You can also nest a list inside another list this way.</p>
+<h3 id="Example-a-simple-recipe-with-a-nested-list"><a href="#Example-a-simple-recipe-with-a-nested-list" class="headerlink" title="Example: a simple recipe with a nested list"></a>Example: a simple recipe with a nested list</h3><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">ol</span> <span class="attr">start</span>=<span class="string">"6"</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">li</span>&gt;</span>Slowly add the milk to the bowl of dry ingredients<span class="tag">&lt;/<span class="name">li</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">li</span>&gt;</span>Stir the milk in until the resulting mixture is even<span class="tag">&lt;/<span class="name">li</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">li</span>&gt;</span>Pour the mixture into the pan and put it into the oven</span><br><span class="line">    <span class="tag">&lt;<span class="name">ul</span>&gt;</span></span><br><span class="line">      <span class="tag">&lt;<span class="name">li</span>&gt;</span>For a crisp, thin crust, bake at the higher temperature for 10 minutes<span class="tag">&lt;/<span class="name">li</span>&gt;</span></span><br><span class="line">      <span class="tag">&lt;<span class="name">li</span>&gt;</span>For an even texture with no crust bake at the lower temperature for 20 minutes<span class="tag">&lt;/<span class="name">li</span>&gt;</span>&gt;</span><br><span class="line">    <span class="tag">&lt;/<span class="name">ul</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;/<span class="name">li</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">ol</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<h3 id="The-resulting-recipe"><a href="#The-resulting-recipe" class="headerlink" title="The resulting recipe"></a>The resulting recipe</h3><div style="border: 1px solid black; margin-bottom: 16px; padding: 0 24px;">
+  <ol start="6">
+    <li>Slowly add the milk to the bowl of dry ingredients</li>
+    <li>Stir the milk in until the resulting mixture is even</li>
+    <li>Pour the mixture into the pan and put it into the oven
+      <ul>
+        <li>For a crisp, thin crust, bake at the higher temperature for 10 minutes</li>
+        <li>For an even texture with no crust bake at the lower temperature for 20 minutes</li>
+      </ul>
+    </li>
+  </ol>
+</div>
+
+<h2 id="Emphasis-and-importance"><a href="#Emphasis-and-importance" class="headerlink" title="Emphasis and importance"></a>Emphasis and importance</h2><p>The next 2 elements are used to mark text that&#39;s emphasized or important.</p>
+<p>The <b>em</b> element is used for text meant to be <em>em</em>phasized, and the <b>strong</b> element is for text that is <strong>strong</strong>ly important.</p>
+<p>A good rule of thumb for these is to read the text in your mind or even say it aloud. Consider using one of these elements wherever you find yourself emphasizing the words.</p>
+<p>Note that, while the default styling for these elements is to <em>italicize</em> <b>em</b> and make <b>strong</b> <em>bold</em>, the elements are semantic, not presentational. They could be styled differently and still have the same meaning.</p>
+<h3 id="Example"><a href="#Example" class="headerlink" title="Example"></a>Example</h3><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">p</span>&gt;</span></span><br><span class="line">  He <span class="tag">&lt;<span class="name">em</span>&gt;</span>really<span class="tag">&lt;/<span class="name">em</span>&gt;</span> wanted to go to the circus, but his father <span class="tag">&lt;<span class="name">strong</span>&gt;</span>hated<span class="tag">&lt;/<span class="name">strong</span>&gt;</span> clowns.</span><br><span class="line"><span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<h3 id="Resulting-text"><a href="#Resulting-text" class="headerlink" title="Resulting text"></a>Resulting text</h3><div style="border: 1px solid black; margin-bottom: 16px; padding: 16px 24px 0;">
+  <p>
+    He <em>really</em> wanted to go to the circus, but his father <strong>hated</strong> clowns.
+  </p>
+</div>
+
+<h2 id="The-old-i-b-and-u-elements"><a href="#The-old-i-b-and-u-elements" class="headerlink" title="The old i, b, and u elements"></a>The old i, b, and u elements</h2><p>In earlier versions of HTML, some elements were defined as presentational. This is partly because use of CSS wasn&#39;t as prominent as it is now, but also because the HTML specification has changed a <em>lot</em> over the past 25+ years.</p>
+<p>They used to simply mean making text italicized, bold, or underlined, but with HTML5 elements have to have semantic definitions.</p>
+<p>Unfortunately, these elements&#39; meanings in the official specification can be confusing so here&#39;s a rule of thumb:</p>
+<p>Simply use each of them when you would expect to see italics, bold, or underlining in a written text.</p>
+<p>Use <b>i</b> to italicize foreign words, or words that are intended to be heard in a different voice&mdash;e.g. a person changes from speaking aloud to thinking.</p>
+<p>Use <b>b</b> for things like keywords and product names.</p>
+<p>Use <b>u</b> for things like spelling errors where you would expect the text to be underlined.</p>
+<p>Be careful with u, though! Web users are strongly conditioned to expect underlined text to be a link. You might want to restyle <b>u</b> elements so the line is dashed or squiggly or something else so it&#39;s clear the user is not supposed to click the text.</p>
+
+    </div>
+
+    
+    
+    
+        
+
+<div>
+<ul class="post-copyright">
+  <li class="post-copyright-author">
+    <strong>Post author:  </strong>Jason Barr
+  </li>
+  <li class="post-copyright-link">
+    <strong>Post link: </strong>
+    <a href="https://exocortex.jasonbarr.dev/basic-html-text-markup/" title="Basic text markup with HTML">https://exocortex.jasonbarr.dev/basic-html-text-markup/</a>
+  </li>
+  <li class="post-copyright-license">
+    <strong>Copyright Notice:  </strong>All articles in this blog are licensed under <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" rel="noopener" target="_blank"><i class="fa fa-fw fa-creative-commons"></i>BY-NC-SA</a> unless stating additionally.
+  </li>
+</ul>
+</div>
+
+
+      <footer class="post-footer">
+          <div class="post-tags">
+              <a href="/tags/web-development/" rel="tag"># web development</a>
+              <a href="/tags/feynman-technique/" rel="tag"># feynman technique</a>
+          </div>
+
+        
+
+
+        
+    <div class="post-nav">
+      <div class="post-nav-item">
+    <a href="/html-basics/" rel="prev" title="The basics of HTML">
+      <i class="fa fa-chevron-left"></i> The basics of HTML
+    </a></div>
+      <div class="post-nav-item"></div>
+    </div>
+      </footer>
+    
+  </article>
+  
+  
+  
+
+  </div>
+
+
+          </div>
+          
+
+<script>
+  window.addEventListener('tabs:register', () => {
+    let activeClass = CONFIG.comments.activeClass;
+    if (CONFIG.comments.storage) {
+      activeClass = localStorage.getItem('comments_active') || activeClass;
+    }
+    if (activeClass) {
+      let activeTab = document.querySelector(`a[href="#comment-${activeClass}"]`);
+      if (activeTab) {
+        activeTab.click();
+      }
+    }
+  });
+  if (CONFIG.comments.storage) {
+    window.addEventListener('tabs:click', event => {
+      if (!event.target.matches('.tabs-comment .tab-content .tab-pane')) return;
+      let commentClass = event.target.classList[1];
+      localStorage.setItem('comments_active', commentClass);
+    });
+  }
+</script>
+
+        </div>
+          
+  
+  <div class="toggle sidebar-toggle">
+    <span class="toggle-line toggle-line-first"></span>
+    <span class="toggle-line toggle-line-middle"></span>
+    <span class="toggle-line toggle-line-last"></span>
+  </div>
+
+  <aside class="sidebar">
+    <div class="sidebar-inner">
+
+      <ul class="sidebar-nav motion-element">
+        <li class="sidebar-nav-toc">
+          Table of Contents
+        </li>
+        <li class="sidebar-nav-overview">
+          Overview
+        </li>
+      </ul>
+
+      <!--noindex-->
+      <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Marking-up-text-the-basics"><span class="nav-number">1.</span> <span class="nav-text">Marking up text: the basics</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#Headings-and-paragraphs"><span class="nav-number">1.1.</span> <span class="nav-text">Headings and paragraphs</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Heading-and-paragraph-examples"><span class="nav-number">1.1.1.</span> <span class="nav-text">Heading and paragraph examples</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Semantics-vs-presentation"><span class="nav-number">1.1.2.</span> <span class="nav-text">Semantics vs. presentation</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Structural-hierarchy"><span class="nav-number">1.1.3.</span> <span class="nav-text">Structural hierarchy</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Lists"><span class="nav-number">2.</span> <span class="nav-text">Lists</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#Unordered-lists"><span class="nav-number">2.1.</span> <span class="nav-text">Unordered lists</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Example-a-shopping-list"><span class="nav-number">2.1.1.</span> <span class="nav-text">Example: a shopping list</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#The-resulting-list"><span class="nav-number">2.1.2.</span> <span class="nav-text">The resulting list</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Ordered-lists"><span class="nav-number">2.2.</span> <span class="nav-text">Ordered lists</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Example-directions"><span class="nav-number">2.2.1.</span> <span class="nav-text">Example: directions</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#The-resulting-list-1"><span class="nav-number">2.2.2.</span> <span class="nav-text">The resulting list</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Content-inside-an-li-and-nesting-lists"><span class="nav-number">2.3.</span> <span class="nav-text">Content inside an li and nesting lists</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Example-a-simple-recipe-with-a-nested-list"><span class="nav-number">2.3.1.</span> <span class="nav-text">Example: a simple recipe with a nested list</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#The-resulting-recipe"><span class="nav-number">2.3.2.</span> <span class="nav-text">The resulting recipe</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Emphasis-and-importance"><span class="nav-number">2.4.</span> <span class="nav-text">Emphasis and importance</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Example"><span class="nav-number">2.4.1.</span> <span class="nav-text">Example</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Resulting-text"><span class="nav-number">2.4.2.</span> <span class="nav-text">Resulting text</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#The-old-i-b-and-u-elements"><span class="nav-number">2.5.</span> <span class="nav-text">The old i, b, and u elements</span></a></li></ol></li></ol></div>
+      </div>
+      <!--/noindex-->
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <img class="site-author-image" itemprop="image" alt="Jason Barr"
+      src="https://avatars2.githubusercontent.com/u/19394818">
+  <p class="site-author-name" itemprop="name">Jason Barr</p>
+  <div class="site-description" itemprop="description">the extended brain of jason barr</div>
+</div>
+<div class="site-state-wrap motion-element">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+          <a href="/archives/">
+        
+          <span class="site-state-item-count">3</span>
+          <span class="site-state-item-name">posts</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+            <a href="/categories/">
+          
+        <span class="site-state-item-count">5</span>
+        <span class="site-state-item-name">categories</span></a>
+      </div>
+      <div class="site-state-item site-state-tags">
+        <span class="site-state-item-count">2</span>
+        <span class="site-state-item-name">tags</span>
+      </div>
+  </nav>
+</div>
+  <div class="links-of-author motion-element">
+      <span class="links-of-author-item">
+        <a href="https://github.com/jasonsbarr" title="GitHub → https:&#x2F;&#x2F;github.com&#x2F;jasonsbarr" rel="noopener" target="_blank"><i class="fa fa-fw fa-github"></i>GitHub</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://twitter.com/jasonsbarr" title="Twitter → https:&#x2F;&#x2F;twitter.com&#x2F;jasonsbarr" rel="noopener" target="_blank"><i class="fa fa-fw fa-twitter"></i>Twitter</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="/atom.xml" title="RSS → &#x2F;atom.xml"><i class="fa fa-fw fa-rss"></i>RSS</a>
+      </span>
+  </div>
+  <div class="cc-license motion-element" itemprop="license">
+    <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" class="cc-opacity" rel="noopener" target="_blank"><img src="/images/cc-by-nc-sa.svg" alt="Creative Commons"></a>
+  </div>
+
+
+
+      </div>
+
+    </div>
+  </aside>
+  <div id="sidebar-dimmer"></div>
+
+
+      </div>
+    </main>
+
+    <footer class="footer">
+      <div class="footer-inner">
+        
+
+<div class="copyright">
+  
+  &copy; 
+  <span itemprop="copyrightYear">2020</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Jason Barr</span>
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item-icon">
+      <i class="fa fa-area-chart"></i>
+    </span>
+    <span title="Symbols count total">14k</span>
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item-icon">
+      <i class="fa fa-coffee"></i>
+    </span>
+    <span title="Reading time total">13 mins.</span>
+</div>
+
+        
+
+
+
+
+
+
+
+
+      </div>
+    </footer>
+  </div>
+
+  
+  <script src="/lib/anime.min.js"></script>
+  <script src="/lib/velocity/velocity.min.js"></script>
+  <script src="/lib/velocity/velocity.ui.min.js"></script>
+
+<script src="/js/utils.js"></script>
+
+<script src="/js/motion.js"></script>
+
+
+<script src="/js/schemes/muse.js"></script>
+
+
+<script src="/js/next-boot.js"></script>
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+
+</body>
+</html>

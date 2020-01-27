@@ -1,0 +1,572 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 4.2.0">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+<link rel="stylesheet" href="/lib/font-awesome/css/font-awesome.min.css">
+
+
+<script id="hexo-configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    hostname: new URL('https://exocortex.jasonbarr.dev').hostname,
+    root: '/',
+    scheme: 'Mist',
+    version: '7.7.0',
+    exturl: false,
+    sidebar: {"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},
+    copycode: {"enable":false,"show_result":false,"style":null},
+    back2top: {"enable":true,"sidebar":false,"scrollpercent":false},
+    bookmark: {"enable":false,"color":"#222","save":"auto"},
+    fancybox: false,
+    mediumzoom: false,
+    lazyload: false,
+    pangu: false,
+    comments: {"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},
+    algolia: {
+      appID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    },
+    localsearch: {"enable":false,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},
+    path: '',
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}}
+  };
+</script>
+
+  <meta name="description" content="What is HTML?HTML is not a programming language. It is a markup language that tells a client, like your browser, how to structure the content in the document.">
+<meta property="og:type" content="article">
+<meta property="og:title" content="The basics of HTML">
+<meta property="og:url" content="https://exocortex.jasonbarr.dev/html-basics/index.html">
+<meta property="og:site_name" content="exocortex">
+<meta property="og:description" content="What is HTML?HTML is not a programming language. It is a markup language that tells a client, like your browser, how to structure the content in the document.">
+<meta property="og:locale" content="en_US">
+<meta property="og:image" content="https://mdn.mozillademos.org/files/9347/grumpy-cat-small.png">
+<meta property="og:image" content="https://images.unsplash.com/photo-1502759683299-cdcd6974244f?auto=format&fit=crop&w=440&h=220&q=60">
+<meta property="article:published_time" content="2020-01-27T22:23:34.000Z">
+<meta property="article:modified_time" content="2020-01-27T22:23:34.940Z">
+<meta property="article:author" content="Jason Barr">
+<meta property="article:tag" content="web development">
+<meta property="article:tag" content="feynman technique">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://mdn.mozillademos.org/files/9347/grumpy-cat-small.png">
+
+<link rel="canonical" href="https://exocortex.jasonbarr.dev/html-basics/">
+
+
+<script id="page-configurations">
+  // https://hexo.io/docs/variables.html
+  CONFIG.page = {
+    sidebar: "",
+    isHome: false,
+    isPost: true
+  };
+</script>
+
+  <title>The basics of HTML | exocortex</title>
+  
+
+
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-header { opacity: initial; }
+
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div class="container use-motion">
+    <div class="headband"></div>
+
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-meta">
+
+    <div>
+      <a href="/" class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">exocortex</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+        <h1 class="site-subtitle" itemprop="description">the extended brain of jason barr</h1>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="Toggle navigation bar">
+      <span class="toggle-line toggle-line-first"></span>
+      <span class="toggle-line toggle-line-middle"></span>
+      <span class="toggle-line toggle-line-last"></span>
+    </div>
+  </div>
+</div>
+
+
+<nav class="site-nav">
+  
+  <ul id="menu" class="menu">
+        <li class="menu-item menu-item-home">
+
+    <a href="/" rel="section"><i class="fa fa-fw fa-home"></i>Home</a>
+
+  </li>
+        <li class="menu-item menu-item-about">
+
+    <a href="/about/" rel="section"><i class="fa fa-fw fa-user"></i>About</a>
+
+  </li>
+        <li class="menu-item menu-item-categories">
+
+    <a href="/categories/" rel="section"><i class="fa fa-fw fa-th"></i>Categories</a>
+
+  </li>
+        <li class="menu-item menu-item-archives">
+
+    <a href="/archives/" rel="section"><i class="fa fa-fw fa-archive"></i>Archives</a>
+
+  </li>
+  </ul>
+
+</nav>
+</div>
+    </header>
+
+    
+  <div class="back-to-top">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+  <div class="reading-progress-bar"></div>
+
+
+    <main class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+
+          <div class="content">
+            
+
+  <div class="posts-expand">
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block " lang="en">
+    <link itemprop="mainEntityOfPage" href="https://exocortex.jasonbarr.dev/html-basics/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="https://avatars2.githubusercontent.com/u/19394818">
+      <meta itemprop="name" content="Jason Barr">
+      <meta itemprop="description" content="the extended brain of jason barr">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="exocortex">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          The basics of HTML
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              <span class="post-meta-item-text">Posted on</span>
+
+              <time title="Created: 2020-01-27 16:23:34" itemprop="dateCreated datePublished" datetime="2020-01-27T16:23:34-06:00">2020-01-27</time>
+            </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">In</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/web-development/" itemprop="url" rel="index">
+                    <span itemprop="name">web development</span>
+                  </a>
+                </span>
+                  , 
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/series/" itemprop="url" rel="index">
+                    <span itemprop="name">series</span>
+                  </a>
+                </span>
+                  , 
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/series/web-dev-from-the-beginning/" itemprop="url" rel="index">
+                    <span itemprop="name">web dev from the beginning</span>
+                  </a>
+                </span>
+                  , 
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/web-development/front-end/" itemprop="url" rel="index">
+                    <span itemprop="name">front-end</span>
+                  </a>
+                </span>
+                  , 
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/web-development/front-end/html/" itemprop="url" rel="index">
+                    <span itemprop="name">html</span>
+                  </a>
+                </span>
+            </span>
+
+          <br>
+            <span class="post-meta-item" title="Symbols count in article">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-file-word-o"></i>
+              </span>
+                <span class="post-meta-item-text">Symbols count in article: </span>
+              <span>4.6k</span>
+            </span>
+            <span class="post-meta-item" title="Reading time">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-clock-o"></i>
+              </span>
+                <span class="post-meta-item-text">Reading time &asymp;</span>
+              <span>4 mins.</span>
+            </span>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+        <h1 id="What-is-HTML"><a href="#What-is-HTML" class="headerlink" title="What is HTML?"></a>What is HTML?</h1><p><abbr title="HyperText Markup Language">HTML</abbr> is not a programming language. It is a markup language that tells a client, like your browser, how to structure the content in the document.</p>
+<a id="more"></a>
+
+<p>An HTML document consists of a series of nested elements that enclose and mark up its content so the client processes it in a particular way.</p>
+<p>HTML is not case sensitive as a language, but the convention is to always write HTML elements in lowercase. This promotes readability and may also prevent errors with some clients.</p>
+<h1 id="HTML-elements"><a href="#HTML-elements" class="headerlink" title="HTML elements"></a>HTML elements</h1><p>HTML documents are made of elements. An HTML element is a piece of markup that carries a particular meaning for its enclosed content and/or other data. Most HTML elements enclose content between their opening and closing tags.</p>
+<h2 id="Anatomy-of-an-HTML-element"><a href="#Anatomy-of-an-HTML-element" class="headerlink" title="Anatomy of an HTML element"></a>Anatomy of an HTML element</h2><p>Every HTML element has its opening tag. Most elements also enclose content and end with a closing tag, like so:</p>
+<img src="https://mdn.mozillademos.org/files/9347/grumpy-cat-small.png" class="" title="A paragraph element, from MDN paragraph-element">
+
+<h2 id="Nesting-elements"><a href="#Nesting-elements" class="headerlink" title="Nesting elements"></a>Nesting elements</h2><p>You can nest HTML elements inside other elements. To do so, make sure to close them in the reverse order of when they were opened, like this:</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">p</span>&gt;</span>This is a paragraph with <span class="tag">&lt;<span class="name">em</span>&gt;</span>emphasized<span class="tag">&lt;/<span class="name">em</span>&gt;</span> text.<span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<p>Failing to properly nest your elements can cause unexpected results that may be difficult to debug.</p>
+<h2 id="Example"><a href="#Example" class="headerlink" title="Example"></a>Example</h2><h3 id="The-code"><a href="#The-code" class="headerlink" title="The code"></a>The code</h3><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">p</span>&gt;</span></span><br><span class="line">  This is a paragraph. It contains text and possibly additional markup to</span><br><span class="line">  <span class="tag">&lt;<span class="name">em</span>&gt;</span>emphasize<span class="tag">&lt;/<span class="name">em</span>&gt;</span> text or <span class="tag">&lt;<span class="name">a</span> <span class="attr">href</span>=<span class="string">"https://google.com"</span>&gt;</span>link<span class="tag">&lt;/<span class="name">a</span>&gt;</span> to</span><br><span class="line">  another HTML page.</span><br><span class="line"><span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<h3 id="The-result"><a href="#The-result" class="headerlink" title="The result"></a>The result</h3><div style="border: 1px solid black; margin-bottom: 16px; padding: 16px 24px 0;">
+  <p>
+    This is a paragraph. It contains text and possibly additional markup to
+    <em>emphasize</em> text or <a href="https://google.com" target="_blank" rel="noopener">link</a> to
+    another HTML page.
+  </p>
+</div>
+
+<p>As you can see, most whitespace (e.g. spaces, tabs, newlines) has no effect on the result. The first whitespace character tells the browser to move onto the next token (a word or symbol that means something in HTML). After that, all whitespace characters are ignored.</p>
+<h1 id="Two-kinds-of-HTML-elements"><a href="#Two-kinds-of-HTML-elements" class="headerlink" title="Two kinds of HTML elements"></a>Two kinds of HTML elements</h1><p>Historically the HTML specification has divided elements up into two categories: block and inline.</p>
+<p>Even though these categories are no longer in the official spec, they&#39;re still useful for understanding how to use HTML.</p>
+<h2 id="Block-elements"><a href="#Block-elements" class="headerlink" title="Block elements"></a>Block elements</h2><p>Block elements visually form a visible block on the page by default. That means there is a clear break with the content that comes both before and after a block element, and it spans the entire width of the page.</p>
+<p>Block elements tend to have some kind of structural significance. They mark off sections of a page, headings, paragraphs, and so on.</p>
+<p>They are often nested inside other block elements, but you shouldn&#39;t place them inside inline elements.</p>
+<h2 id="Inline-elements"><a href="#Inline-elements" class="headerlink" title="Inline elements"></a>Inline elements</h2><p>Inline elements are often found inside a block element, though they can also be nested inside other inline elements.</p>
+<p>They surround particular bits of content to mark them up for the document to be read by a browser or other client.</p>
+<p>Inline elements often tell the browser what a piece of content means, for example the <b>em</b> element shows its content should be <em>emphasized</em>. Text inside an <b>em</b> element is italicized by default.</p>
+<h2 id="These-categories-are-obsolete"><a href="#These-categories-are-obsolete" class="headerlink" title="These categories are obsolete"></a>These categories are obsolete</h2><p>They were used in previous versions of HTML where semantics and presentation weren&#39;t as clearly set apart as they are in HTML5.</p>
+<p>As long as there has been CSS it&#39;s been possible to change the elements&#39; styling, but people often misunderstood the purpose of the names &quot;block&quot; and &quot;inline.&quot;</p>
+<p>It was too easy to confuse block and inline <em>elements</em> with the block and inline <em>values</em> of the CSS <b>display</b> property.</p>
+<p>Because of this confusion and the push to define elements in terms of their semantics, HTML5 does not use these categories.</p>
+<p>Nonetheless, they are still a convenient shorthand to help you understand how to use different kinds of HTML elements.</p>
+<h1 id="Void-elements"><a href="#Void-elements" class="headerlink" title="Void elements"></a>Void elements</h1><p>Unlike most elements, which take some kind of content between the opening and closing tags, void elements are empty. They hold no content. Their values and other properties are defined by their internal data, which are called <b>attributes</b>.</p>
+<p>For example, an <b>img</b> element is void. The image value is determined by its <b>src</b> attribute, which gives the URL for the image file.</p>
+<h2 id="Example-1"><a href="#Example-1" class="headerlink" title="Example"></a>Example</h2><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">img</span> <span class="attr">src</span>=<span class="string">"https://images.unsplash.com/photo-1502759683299-cdcd6974244f?auto=format&amp;fit=crop&amp;w=440&amp;h=220&amp;q=60"</span> <span class="attr">alt</span>=<span class="string">"Palm trees at sunset"</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<h2 id="Result"><a href="#Result" class="headerlink" title="Result"></a>Result</h2><img src="https://images.unsplash.com/photo-1502759683299-cdcd6974244f?auto=format&fit=crop&w=440&h=220&q=60" alt="Palm trees at sunset">
+
+<h1 id="Attributes"><a href="#Attributes" class="headerlink" title="Attributes"></a>Attributes</h1><p>The <b>src</b> above that determines the image to be displayed is one example of an HTML <b>attribute</b>.</p>
+<p>Attributes contain data about the element to which they are attached. This data is held in addition to any content the element may contain.</p>
+<p>There are some global attributes, like <b>class</b>, that can be defined on any element.</p>
+<p>Other attributes can only be defined on certain elements or types of elements.</p>
+<h2 id="Boolean-attributes"><a href="#Boolean-attributes" class="headerlink" title="Boolean attributes"></a>Boolean attributes</h2><p>Boolean attributes have no value. The presence of the attribute&#39;s name itself is enough to define it.</p>
+<p>For example, the <b>disabled</b> attribute on a form <b>input</b> element sets the field so it cannot have text entered into it.</p>
+<h3 id="Example-2"><a href="#Example-2" class="headerlink" title="Example"></a>Example</h3><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">"text"</span> <span class="attr">disabled</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">"text"</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<h3 id="Result-1"><a href="#Result-1" class="headerlink" title="Result"></a>Result</h3><p>Notice the difference: the first <b>input</b> is disabled, but the second is not. You can type in the second one.</p>
+<div style="border: 1px solid black; margin-bottom: 16px; padding: 16px 24px;">
+  <input type="text" disabled>
+  <input type="text">
+</div>
+
+<h2 id="Attribute-style"><a href="#Attribute-style" class="headerlink" title="Attribute style"></a>Attribute style</h2><p>In some cases the quotation marks around an attribute&#39;s value are optional. As a general rule you should include them anyway to avoid possible problems.</p>
+<p>It doesn&#39;t matter if you use single or double quotes around a value, as long as the start and end quote are the same. If you need to enclose a particular kind of quote in the value itself, wrap the value in the other kind of quote.</p>
+
+    </div>
+
+    
+    
+    
+        
+
+<div>
+<ul class="post-copyright">
+  <li class="post-copyright-author">
+    <strong>Post author:  </strong>Jason Barr
+  </li>
+  <li class="post-copyright-link">
+    <strong>Post link: </strong>
+    <a href="https://exocortex.jasonbarr.dev/html-basics/" title="The basics of HTML">https://exocortex.jasonbarr.dev/html-basics/</a>
+  </li>
+  <li class="post-copyright-license">
+    <strong>Copyright Notice:  </strong>All articles in this blog are licensed under <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" rel="noopener" target="_blank"><i class="fa fa-fw fa-creative-commons"></i>BY-NC-SA</a> unless stating additionally.
+  </li>
+</ul>
+</div>
+
+
+      <footer class="post-footer">
+          <div class="post-tags">
+              <a href="/tags/web-development/" rel="tag"># web development</a>
+              <a href="/tags/feynman-technique/" rel="tag"># feynman technique</a>
+          </div>
+
+        
+
+
+        
+    <div class="post-nav">
+      <div class="post-nav-item">
+    <a href="/web-development-notes-beginning/" rel="prev" title="Notes on web development: starting from the beginning">
+      <i class="fa fa-chevron-left"></i> Notes on web development: starting from the beginning
+    </a></div>
+      <div class="post-nav-item">
+    <a href="/basic-html-text-markup/" rel="next" title="Basic text markup with HTML">
+      Basic text markup with HTML <i class="fa fa-chevron-right"></i>
+    </a></div>
+    </div>
+      </footer>
+    
+  </article>
+  
+  
+  
+
+  </div>
+
+
+          </div>
+          
+
+<script>
+  window.addEventListener('tabs:register', () => {
+    let activeClass = CONFIG.comments.activeClass;
+    if (CONFIG.comments.storage) {
+      activeClass = localStorage.getItem('comments_active') || activeClass;
+    }
+    if (activeClass) {
+      let activeTab = document.querySelector(`a[href="#comment-${activeClass}"]`);
+      if (activeTab) {
+        activeTab.click();
+      }
+    }
+  });
+  if (CONFIG.comments.storage) {
+    window.addEventListener('tabs:click', event => {
+      if (!event.target.matches('.tabs-comment .tab-content .tab-pane')) return;
+      let commentClass = event.target.classList[1];
+      localStorage.setItem('comments_active', commentClass);
+    });
+  }
+</script>
+
+        </div>
+          
+  
+  <div class="toggle sidebar-toggle">
+    <span class="toggle-line toggle-line-first"></span>
+    <span class="toggle-line toggle-line-middle"></span>
+    <span class="toggle-line toggle-line-last"></span>
+  </div>
+
+  <aside class="sidebar">
+    <div class="sidebar-inner">
+
+      <ul class="sidebar-nav motion-element">
+        <li class="sidebar-nav-toc">
+          Table of Contents
+        </li>
+        <li class="sidebar-nav-overview">
+          Overview
+        </li>
+      </ul>
+
+      <!--noindex-->
+      <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#What-is-HTML"><span class="nav-number">1.</span> <span class="nav-text">What is HTML?</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#HTML-elements"><span class="nav-number">2.</span> <span class="nav-text">HTML elements</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#Anatomy-of-an-HTML-element"><span class="nav-number">2.1.</span> <span class="nav-text">Anatomy of an HTML element</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Nesting-elements"><span class="nav-number">2.2.</span> <span class="nav-text">Nesting elements</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Example"><span class="nav-number">2.3.</span> <span class="nav-text">Example</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#The-code"><span class="nav-number">2.3.1.</span> <span class="nav-text">The code</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#The-result"><span class="nav-number">2.3.2.</span> <span class="nav-text">The result</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Two-kinds-of-HTML-elements"><span class="nav-number">3.</span> <span class="nav-text">Two kinds of HTML elements</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#Block-elements"><span class="nav-number">3.1.</span> <span class="nav-text">Block elements</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Inline-elements"><span class="nav-number">3.2.</span> <span class="nav-text">Inline elements</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#These-categories-are-obsolete"><span class="nav-number">3.3.</span> <span class="nav-text">These categories are obsolete</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Void-elements"><span class="nav-number">4.</span> <span class="nav-text">Void elements</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#Example-1"><span class="nav-number">4.1.</span> <span class="nav-text">Example</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Result"><span class="nav-number">4.2.</span> <span class="nav-text">Result</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Attributes"><span class="nav-number">5.</span> <span class="nav-text">Attributes</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#Boolean-attributes"><span class="nav-number">5.1.</span> <span class="nav-text">Boolean attributes</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Example-2"><span class="nav-number">5.1.1.</span> <span class="nav-text">Example</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Result-1"><span class="nav-number">5.1.2.</span> <span class="nav-text">Result</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Attribute-style"><span class="nav-number">5.2.</span> <span class="nav-text">Attribute style</span></a></li></ol></li></ol></div>
+      </div>
+      <!--/noindex-->
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <img class="site-author-image" itemprop="image" alt="Jason Barr"
+      src="https://avatars2.githubusercontent.com/u/19394818">
+  <p class="site-author-name" itemprop="name">Jason Barr</p>
+  <div class="site-description" itemprop="description">the extended brain of jason barr</div>
+</div>
+<div class="site-state-wrap motion-element">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+          <a href="/archives/">
+        
+          <span class="site-state-item-count">3</span>
+          <span class="site-state-item-name">posts</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+            <a href="/categories/">
+          
+        <span class="site-state-item-count">5</span>
+        <span class="site-state-item-name">categories</span></a>
+      </div>
+      <div class="site-state-item site-state-tags">
+        <span class="site-state-item-count">2</span>
+        <span class="site-state-item-name">tags</span>
+      </div>
+  </nav>
+</div>
+  <div class="links-of-author motion-element">
+      <span class="links-of-author-item">
+        <a href="https://github.com/jasonsbarr" title="GitHub → https:&#x2F;&#x2F;github.com&#x2F;jasonsbarr" rel="noopener" target="_blank"><i class="fa fa-fw fa-github"></i>GitHub</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://twitter.com/jasonsbarr" title="Twitter → https:&#x2F;&#x2F;twitter.com&#x2F;jasonsbarr" rel="noopener" target="_blank"><i class="fa fa-fw fa-twitter"></i>Twitter</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="/atom.xml" title="RSS → &#x2F;atom.xml"><i class="fa fa-fw fa-rss"></i>RSS</a>
+      </span>
+  </div>
+  <div class="cc-license motion-element" itemprop="license">
+    <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" class="cc-opacity" rel="noopener" target="_blank"><img src="/images/cc-by-nc-sa.svg" alt="Creative Commons"></a>
+  </div>
+
+
+
+      </div>
+
+    </div>
+  </aside>
+  <div id="sidebar-dimmer"></div>
+
+
+      </div>
+    </main>
+
+    <footer class="footer">
+      <div class="footer-inner">
+        
+
+<div class="copyright">
+  
+  &copy; 
+  <span itemprop="copyrightYear">2020</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Jason Barr</span>
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item-icon">
+      <i class="fa fa-area-chart"></i>
+    </span>
+    <span title="Symbols count total">14k</span>
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item-icon">
+      <i class="fa fa-coffee"></i>
+    </span>
+    <span title="Reading time total">13 mins.</span>
+</div>
+
+        
+
+
+
+
+
+
+
+
+      </div>
+    </footer>
+  </div>
+
+  
+  <script src="/lib/anime.min.js"></script>
+  <script src="/lib/velocity/velocity.min.js"></script>
+  <script src="/lib/velocity/velocity.ui.min.js"></script>
+
+<script src="/js/utils.js"></script>
+
+<script src="/js/motion.js"></script>
+
+
+<script src="/js/schemes/muse.js"></script>
+
+
+<script src="/js/next-boot.js"></script>
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+
+</body>
+</html>
