@@ -48,7 +48,7 @@ highlight:
   enable: true
   line_number: true
   auto_detect: false
-  tab_replace: ' '
+  tab_replace: '  '
   wrap: true
   hljs: false
 
@@ -96,6 +96,11 @@ sitemap:
   path: sitemap.xml
   template: node_modules/hexo-generator-sitemap/sitemap.xml
   rel: false
+marked:
+  smartypants: false
+  sanitizeUrl: true
+  external_link:
+    enable: true
 
 ## Themes: https://hexo.io/themes/
 theme: next
