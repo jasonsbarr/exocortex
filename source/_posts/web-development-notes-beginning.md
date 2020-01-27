@@ -5,8 +5,7 @@ tags:
   - feynman technique
 categories:
   - web development
-  - - series
-    - web dev from the beginning
+  - [series, web dev from the beginning]
 date: 2020-01-26 21:05:10
 ---
 
