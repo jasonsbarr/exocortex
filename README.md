@@ -1,3 +1,5 @@
+Ignore Jekyll comments below; site has been rebuilt with Hexo
+
 ## Welcome to GitHub Pages
 
 You can use the [editor on GitHub](https://github.com/jasonsbarr/exocortex/edit/master/README.md) to maintain and preview the content for your website in Markdown files.
