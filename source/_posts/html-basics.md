@@ -12,12 +12,11 @@ categories:
 date: 2020-01-27 16:23:34
 ---
 
-
-# What is HTML?
-
 <abbr title="HyperText Markup Language">HTML</abbr> is not a programming language. It is a markup language that tells a client, like your browser, how to structure the content in the document.
 
 <!-- more -->
+
+# What is HTML?
 
 An HTML document consists of a series of nested elements that enclose and mark up its content so the client processes it in a particular way.
 
