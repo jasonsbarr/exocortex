@@ -135,17 +135,31 @@ For example, the <b>disabled</b> attribute on a form <b>input</b> element sets t
 ### Example
 
 ```html
-<input type="text" disabled>
-<input type="text">
+<label for="disabled-input">
+  Disabled
+  <input style="display: block;" id="disabled-input" type="text" disabled>
+</label>
+<label for="working-input">
+  Working
+  <input style="display: block;" id="working-input" type="text">
+</label>
 ```
 
 ### Result
 
 Notice the difference: the first <b>input</b> is disabled, but the second is not. You can type in the second one.
 
+Also note how the <b>input</b> elements, which are inline elements, are styled with <i>display: block</i>. That shows how you can't depend on an element's appearance to categorize it.
+
 <div style="border: 1px solid black; margin-bottom: 16px; padding: 16px 24px;">
-  <input type="text" disabled>
-  <input type="text">
+  <label style="display: block;" for="disabled-input">
+    Disabled:
+    <input id="disabled-input" type="text" disabled>
+  </label>
+  <label style="display: block;" for="working-input">
+    Working:
+    <input id="working-input" type="text">
+  </label>
 </div>
 
 ## Attribute style
@@ -153,3 +167,56 @@ Notice the difference: the first <b>input</b> is disabled, but the second is not
 In some cases the quotation marks around an attribute's value are optional. As a general rule you should include them anyway to avoid possible problems.
 
 It doesn't matter if you use single or double quotes around a value, as long as the start and end quote are the same. If you need to enclose a particular kind of quote in the value itself, wrap the value in the other kind of quote.
+
+# Including special characters
+
+Since <, >, ', ", and & all have special meaning as part of the HTML syntax, you have to use HTML entity references to make them appear on screen.
+
+HTML entities begin with &, which is followed by a code, and then terminate with a semicolon.
+
+You can also use an HTML entity for a non-breaking space, which forces the browser to treat it as a space character instead of regular whitespace.
+
+<table>
+  <thead>
+    <tr>
+      <th>Literal character</th>
+      <th>HTML entity</th>
+    </tr>
+    <tr>
+      <td><</td>
+      <td>&amp;lt;</td>
+    </tr>
+    <tr>
+      <td>></td>
+      <td>&amp;gt;</td>
+    </tr>
+    <tr>
+      <td>'</td>
+      <td>&amp;apos;</td>
+    </tr>
+    <tr>
+      <td>"</td>
+      <td>&amp;quot;</td>
+    </tr>
+    <tr>
+      <td>&</td>
+      <td>&amp;amp;</td>
+    </tr>
+    <tr>
+      <td> (blank space)</td>
+      <td>&amp;nbsp;</td>
+    </tr>
+  </thead>
+</table>
+
+There are many other HTML entities, but if your document is encoded in UTF-8 you can just use the literal characters for them.
+
+# Comments
+
+Comments are ignored by the browser. You can use them to put notes for yourself or other developers about how the code works, why you made certain design choices, and so on.
+
+A comment starts with &lt;!-- and ends with --&gt;.
+
+```html
+<!-- I am inside an HTML comment -->
+```
