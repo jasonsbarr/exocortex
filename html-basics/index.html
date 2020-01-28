@@ -56,7 +56,7 @@
 <meta property="og:image" content="https://mdn.mozillademos.org/files/9347/grumpy-cat-small.png">
 <meta property="og:image" content="https://images.unsplash.com/photo-1502759683299-cdcd6974244f?auto=format&fit=crop&w=440&h=220&q=60">
 <meta property="article:published_time" content="2020-01-27T22:23:34.000Z">
-<meta property="article:modified_time" content="2020-01-27T22:33:09.260Z">
+<meta property="article:modified_time" content="2020-01-28T15:52:20.500Z">
 <meta property="article:author" content="Jason Barr">
 <meta property="article:tag" content="web development">
 <meta property="article:tag" content="feynman technique">
@@ -209,10 +209,16 @@
                 <i class="fa fa-calendar-o"></i>
               </span>
               <span class="post-meta-item-text">Posted on</span>
-              
 
-              <time title="Created: 2020-01-27 16:23:34 / Modified: 16:33:09" itemprop="dateCreated datePublished" datetime="2020-01-27T16:23:34-06:00">2020-01-27</time>
+              <time title="Created: 2020-01-27 16:23:34" itemprop="dateCreated datePublished" datetime="2020-01-27T16:23:34-06:00">2020-01-27</time>
             </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                <span class="post-meta-item-text">Edited on</span>
+                <time title="Modified: 2020-01-28 09:52:20" itemprop="dateModified" datetime="2020-01-28T09:52:20-06:00">2020-01-28</time>
+              </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
                 <i class="fa fa-folder-o"></i>
@@ -255,14 +261,14 @@
                 <i class="fa fa-file-word-o"></i>
               </span>
                 <span class="post-meta-item-text">Symbols count in article: </span>
-              <span>4.6k</span>
+              <span>5.8k</span>
             </span>
             <span class="post-meta-item" title="Reading time">
               <span class="post-meta-item-icon">
                 <i class="fa fa-clock-o"></i>
               </span>
                 <span class="post-meta-item-text">Reading time &asymp;</span>
-              <span>4 mins.</span>
+              <span>5 mins.</span>
             </span>
 
         </div>
@@ -323,16 +329,63 @@
 <p>Other attributes can only be defined on certain elements or types of elements.</p>
 <h2 id="Boolean-attributes"><a href="#Boolean-attributes" class="headerlink" title="Boolean attributes"></a>Boolean attributes</h2><p>Boolean attributes have no value. The presence of the attribute&#39;s name itself is enough to define it.</p>
 <p>For example, the <b>disabled</b> attribute on a form <b>input</b> element sets the field so it cannot have text entered into it.</p>
-<h3 id="Example-2"><a href="#Example-2" class="headerlink" title="Example"></a>Example</h3><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">"text"</span> <span class="attr">disabled</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">"text"</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<h3 id="Example-2"><a href="#Example-2" class="headerlink" title="Example"></a>Example</h3><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">label</span> <span class="attr">for</span>=<span class="string">"disabled-input"</span>&gt;</span></span><br><span class="line">  Disabled</span><br><span class="line">  <span class="tag">&lt;<span class="name">input</span> <span class="attr">style</span>=<span class="string">"display: block;"</span> <span class="attr">id</span>=<span class="string">"disabled-input"</span> <span class="attr">type</span>=<span class="string">"text"</span> <span class="attr">disabled</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">label</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">label</span> <span class="attr">for</span>=<span class="string">"working-input"</span>&gt;</span></span><br><span class="line">  Working</span><br><span class="line">  <span class="tag">&lt;<span class="name">input</span> <span class="attr">style</span>=<span class="string">"display: block;"</span> <span class="attr">id</span>=<span class="string">"working-input"</span> <span class="attr">type</span>=<span class="string">"text"</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">label</span>&gt;</span></span><br></pre></td></tr></table></figure>
 
 <h3 id="Result-1"><a href="#Result-1" class="headerlink" title="Result"></a>Result</h3><p>Notice the difference: the first <b>input</b> is disabled, but the second is not. You can type in the second one.</p>
+<p>Also note how the <b>input</b> elements, which are inline elements, are styled with <i>display: block</i>. That shows how you can&#39;t depend on an element&#39;s appearance to categorize it.</p>
 <div style="border: 1px solid black; margin-bottom: 16px; padding: 16px 24px;">
-  <input type="text" disabled>
-  <input type="text">
+  <label style="display: block;" for="disabled-input">
+    Disabled:
+    <input id="disabled-input" type="text" disabled>
+  </label>
+  <label style="display: block;" for="working-input">
+    Working:
+    <input id="working-input" type="text">
+  </label>
 </div>
 
 <h2 id="Attribute-style"><a href="#Attribute-style" class="headerlink" title="Attribute style"></a>Attribute style</h2><p>In some cases the quotation marks around an attribute&#39;s value are optional. As a general rule you should include them anyway to avoid possible problems.</p>
 <p>It doesn&#39;t matter if you use single or double quotes around a value, as long as the start and end quote are the same. If you need to enclose a particular kind of quote in the value itself, wrap the value in the other kind of quote.</p>
+<h1 id="Including-special-characters"><a href="#Including-special-characters" class="headerlink" title="Including special characters"></a>Including special characters</h1><p>Since &lt;, &gt;, &#39;, &quot;, and &amp; all have special meaning as part of the HTML syntax, you have to use HTML entity references to make them appear on screen.</p>
+<p>HTML entities begin with &amp;, which is followed by a code, and then terminate with a semicolon.</p>
+<p>You can also use an HTML entity for a non-breaking space, which forces the browser to treat it as a space character instead of regular whitespace.</p>
+<table>
+  <thead>
+    <tr>
+      <th>Literal character</th>
+      <th>HTML entity</th>
+    </tr>
+    <tr>
+      <td><</td>
+      <td>&amp;lt;</td>
+    </tr>
+    <tr>
+      <td>></td>
+      <td>&amp;gt;</td>
+    </tr>
+    <tr>
+      <td>'</td>
+      <td>&amp;apos;</td>
+    </tr>
+    <tr>
+      <td>"</td>
+      <td>&amp;quot;</td>
+    </tr>
+    <tr>
+      <td>&</td>
+      <td>&amp;amp;</td>
+    </tr>
+    <tr>
+      <td> (blank space)</td>
+      <td>&amp;nbsp;</td>
+    </tr>
+  </thead>
+</table>
+
+<p>There are many other HTML entities, but if your document is encoded in UTF-8 you can just use the literal characters for them.</p>
+<h1 id="Comments"><a href="#Comments" class="headerlink" title="Comments"></a>Comments</h1><p>Comments are ignored by the browser. You can use them to put notes for yourself or other developers about how the code works, why you made certain design choices, and so on.</p>
+<p>A comment starts with &lt;!-- and ends with --&gt;.</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">&lt;!-- I am inside an HTML comment --&gt;</span></span><br></pre></td></tr></table></figure>
 
     </div>
 
@@ -435,7 +488,7 @@
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
-          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#What-is-HTML"><span class="nav-number">1.</span> <span class="nav-text">What is HTML?</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#HTML-elements"><span class="nav-number">2.</span> <span class="nav-text">HTML elements</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#Anatomy-of-an-HTML-element"><span class="nav-number">2.1.</span> <span class="nav-text">Anatomy of an HTML element</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Nesting-elements"><span class="nav-number">2.2.</span> <span class="nav-text">Nesting elements</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Example"><span class="nav-number">2.3.</span> <span class="nav-text">Example</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#The-code"><span class="nav-number">2.3.1.</span> <span class="nav-text">The code</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#The-result"><span class="nav-number">2.3.2.</span> <span class="nav-text">The result</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Two-kinds-of-HTML-elements"><span class="nav-number">3.</span> <span class="nav-text">Two kinds of HTML elements</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#Block-elements"><span class="nav-number">3.1.</span> <span class="nav-text">Block elements</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Inline-elements"><span class="nav-number">3.2.</span> <span class="nav-text">Inline elements</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#These-categories-are-obsolete"><span class="nav-number">3.3.</span> <span class="nav-text">These categories are obsolete</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Void-elements"><span class="nav-number">4.</span> <span class="nav-text">Void elements</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#Example-1"><span class="nav-number">4.1.</span> <span class="nav-text">Example</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Result"><span class="nav-number">4.2.</span> <span class="nav-text">Result</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Attributes"><span class="nav-number">5.</span> <span class="nav-text">Attributes</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#Boolean-attributes"><span class="nav-number">5.1.</span> <span class="nav-text">Boolean attributes</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Example-2"><span class="nav-number">5.1.1.</span> <span class="nav-text">Example</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Result-1"><span class="nav-number">5.1.2.</span> <span class="nav-text">Result</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Attribute-style"><span class="nav-number">5.2.</span> <span class="nav-text">Attribute style</span></a></li></ol></li></ol></div>
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#What-is-HTML"><span class="nav-number">1.</span> <span class="nav-text">What is HTML?</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#HTML-elements"><span class="nav-number">2.</span> <span class="nav-text">HTML elements</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#Anatomy-of-an-HTML-element"><span class="nav-number">2.1.</span> <span class="nav-text">Anatomy of an HTML element</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Nesting-elements"><span class="nav-number">2.2.</span> <span class="nav-text">Nesting elements</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Example"><span class="nav-number">2.3.</span> <span class="nav-text">Example</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#The-code"><span class="nav-number">2.3.1.</span> <span class="nav-text">The code</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#The-result"><span class="nav-number">2.3.2.</span> <span class="nav-text">The result</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Two-kinds-of-HTML-elements"><span class="nav-number">3.</span> <span class="nav-text">Two kinds of HTML elements</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#Block-elements"><span class="nav-number">3.1.</span> <span class="nav-text">Block elements</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Inline-elements"><span class="nav-number">3.2.</span> <span class="nav-text">Inline elements</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#These-categories-are-obsolete"><span class="nav-number">3.3.</span> <span class="nav-text">These categories are obsolete</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Void-elements"><span class="nav-number">4.</span> <span class="nav-text">Void elements</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#Example-1"><span class="nav-number">4.1.</span> <span class="nav-text">Example</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Result"><span class="nav-number">4.2.</span> <span class="nav-text">Result</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Attributes"><span class="nav-number">5.</span> <span class="nav-text">Attributes</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#Boolean-attributes"><span class="nav-number">5.1.</span> <span class="nav-text">Boolean attributes</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Example-2"><span class="nav-number">5.1.1.</span> <span class="nav-text">Example</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Result-1"><span class="nav-number">5.1.2.</span> <span class="nav-text">Result</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Attribute-style"><span class="nav-number">5.2.</span> <span class="nav-text">Attribute style</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Including-special-characters"><span class="nav-number">6.</span> <span class="nav-text">Including special characters</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Comments"><span class="nav-number">7.</span> <span class="nav-text">Comments</span></a></li></ol></div>
       </div>
       <!--/noindex-->
 
@@ -510,12 +563,12 @@
     <span class="post-meta-item-icon">
       <i class="fa fa-area-chart"></i>
     </span>
-    <span title="Symbols count total">14k</span>
+    <span title="Symbols count total">15k</span>
     <span class="post-meta-divider">|</span>
     <span class="post-meta-item-icon">
       <i class="fa fa-coffee"></i>
     </span>
-    <span title="Reading time total">13 mins.</span>
+    <span title="Reading time total">14 mins.</span>
 </div>
 
         
