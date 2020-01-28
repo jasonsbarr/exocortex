@@ -4,14 +4,10 @@ tags:
   - web development
   - feynman technique
 categories:
-  - - series
-    - web dev from the beginning
-  - - web development
-    - front-end
-    - html
+  - [series, web dev from the beginning]
+  - [web development, front-end, html]
 date: 2020-01-28 12:36:25
 ---
-
 
 Links put the "hypertext" in HTML. Knowing how to make informative, secure hyperlinks is a must-have skill for a web developer.
 
