@@ -2,23 +2,30 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
-    <loc>https://exocortex.jasonbarr.dev/html-links/</loc>
+    <loc>https://exocortex.jasonbarr.dev/basic-html-text-markup/</loc>
     
-    <lastmod>2020-01-28T18:36:25.670Z</lastmod>
+    <lastmod>2020-01-28T22:09:13.180Z</lastmod>
     
   </url>
   
   <url>
     <loc>https://exocortex.jasonbarr.dev/html-basics/</loc>
     
-    <lastmod>2020-01-28T15:52:20.500Z</lastmod>
+    <lastmod>2020-01-28T22:07:41.380Z</lastmod>
     
   </url>
   
   <url>
-    <loc>https://exocortex.jasonbarr.dev/basic-html-text-markup/</loc>
+    <loc>https://exocortex.jasonbarr.dev/html-links/</loc>
     
-    <lastmod>2020-01-27T22:28:16.570Z</lastmod>
+    <lastmod>2020-01-28T22:06:56.920Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://exocortex.jasonbarr.dev/html-head-element-metadata/</loc>
+    
+    <lastmod>2020-01-28T22:06:08.210Z</lastmod>
     
   </url>
   

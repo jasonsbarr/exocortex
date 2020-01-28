@@ -1,0 +1,600 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 4.2.0">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+<link rel="stylesheet" href="/lib/font-awesome/css/font-awesome.min.css">
+
+
+<script id="hexo-configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    hostname: new URL('https://exocortex.jasonbarr.dev').hostname,
+    root: '/',
+    scheme: 'Mist',
+    version: '7.7.0',
+    exturl: false,
+    sidebar: {"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},
+    copycode: {"enable":false,"show_result":false,"style":null},
+    back2top: {"enable":true,"sidebar":false,"scrollpercent":false},
+    bookmark: {"enable":false,"color":"#222","save":"auto"},
+    fancybox: false,
+    mediumzoom: false,
+    lazyload: false,
+    pangu: false,
+    comments: {"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},
+    algolia: {
+      appID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    },
+    localsearch: {"enable":false,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},
+    path: '',
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}}
+  };
+</script>
+
+  <meta name="description" content="It&#39;s not enough to just know how to mark up content using HTML. It&#39;s at least equally as important to know how to structure your document well and use the proper metadata. That will make sure">
+<meta property="og:type" content="article">
+<meta property="og:title" content="HTML document structure, head element, and metadata">
+<meta property="og:url" content="https://exocortex.jasonbarr.dev/html-head-element-metadata/index.html">
+<meta property="og:site_name" content="exocortex">
+<meta property="og:description" content="It&#39;s not enough to just know how to mark up content using HTML. It&#39;s at least equally as important to know how to structure your document well and use the proper metadata. That will make sure">
+<meta property="og:locale" content="en_US">
+<meta property="og:image" content="https://mdn.mozillademos.org/files/12351/bookmark-favicon.png">
+<meta property="article:published_time" content="2020-01-28T22:05:19.000Z">
+<meta property="article:modified_time" content="2020-01-28T22:06:08.210Z">
+<meta property="article:author" content="Jason Barr">
+<meta property="article:tag" content="web development">
+<meta property="article:tag" content="feynman technique">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://mdn.mozillademos.org/files/12351/bookmark-favicon.png">
+
+<link rel="canonical" href="https://exocortex.jasonbarr.dev/html-head-element-metadata/">
+
+
+<script id="page-configurations">
+  // https://hexo.io/docs/variables.html
+  CONFIG.page = {
+    sidebar: "",
+    isHome: false,
+    isPost: true
+  };
+</script>
+
+  <title>HTML document structure, head element, and metadata | exocortex</title>
+  
+
+
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-header { opacity: initial; }
+
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div class="container use-motion">
+    <div class="headband"></div>
+
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-meta">
+
+    <div>
+      <a href="/" class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">exocortex</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+        <h1 class="site-subtitle" itemprop="description">the extended brain of jason barr</h1>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="Toggle navigation bar">
+      <span class="toggle-line toggle-line-first"></span>
+      <span class="toggle-line toggle-line-middle"></span>
+      <span class="toggle-line toggle-line-last"></span>
+    </div>
+  </div>
+</div>
+
+
+<nav class="site-nav">
+  
+  <ul id="menu" class="menu">
+        <li class="menu-item menu-item-home">
+
+    <a href="/" rel="section"><i class="fa fa-fw fa-home"></i>Home</a>
+
+  </li>
+        <li class="menu-item menu-item-about">
+
+    <a href="/about/" rel="section"><i class="fa fa-fw fa-user"></i>About</a>
+
+  </li>
+        <li class="menu-item menu-item-categories">
+
+    <a href="/categories/" rel="section"><i class="fa fa-fw fa-th"></i>Categories</a>
+
+  </li>
+        <li class="menu-item menu-item-archives">
+
+    <a href="/archives/" rel="section"><i class="fa fa-fw fa-archive"></i>Archives</a>
+
+  </li>
+  </ul>
+
+</nav>
+</div>
+    </header>
+
+    
+  <div class="back-to-top">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+  <div class="reading-progress-bar"></div>
+
+
+    <main class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+
+          <div class="content">
+            
+
+  <div class="posts-expand">
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block " lang="en">
+    <link itemprop="mainEntityOfPage" href="https://exocortex.jasonbarr.dev/html-head-element-metadata/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="https://avatars2.githubusercontent.com/u/19394818">
+      <meta itemprop="name" content="Jason Barr">
+      <meta itemprop="description" content="the extended brain of jason barr">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="exocortex">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          HTML document structure, head element, and metadata
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              <span class="post-meta-item-text">Posted on</span>
+              
+
+              <time title="Created: 2020-01-28 16:05:19 / Modified: 16:06:08" itemprop="dateCreated datePublished" datetime="2020-01-28T16:05:19-06:00">2020-01-28</time>
+            </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">In</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/series/" itemprop="url" rel="index">
+                    <span itemprop="name">series</span>
+                  </a>
+                </span>
+                  , 
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/web-development/" itemprop="url" rel="index">
+                    <span itemprop="name">web development</span>
+                  </a>
+                </span>
+                  , 
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/series/web-dev-from-the-beginning/" itemprop="url" rel="index">
+                    <span itemprop="name">web dev from the beginning</span>
+                  </a>
+                </span>
+                  , 
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/web-development/front-end/" itemprop="url" rel="index">
+                    <span itemprop="name">front-end</span>
+                  </a>
+                </span>
+                  , 
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/web-development/front-end/html/" itemprop="url" rel="index">
+                    <span itemprop="name">html</span>
+                  </a>
+                </span>
+            </span>
+
+          <br>
+            <span class="post-meta-item" title="Symbols count in article">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-file-word-o"></i>
+              </span>
+                <span class="post-meta-item-text">Symbols count in article: </span>
+              <span>8.7k</span>
+            </span>
+            <span class="post-meta-item" title="Reading time">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-clock-o"></i>
+              </span>
+                <span class="post-meta-item-text">Reading time &asymp;</span>
+              <span>8 mins.</span>
+            </span>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+        <p>It&#39;s not enough to just know how to mark up content using HTML. It&#39;s at least equally as important to know how to structure your document well and use the proper metadata. That will make sure your page assets load properly, including stylesheets and JavaScript. It will also help search engines and social media sites process your site correctly.</p>
+<a id="more"></a>
+
+<h1 id="HTML-document-structure"><a href="#HTML-document-structure" class="headerlink" title="HTML document structure"></a>HTML document structure</h1><p>A minimal HTML document should look something like this:</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&lt;!DOCTYPE <span class="meta-keyword">html</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">html</span> <span class="attr">lang</span>=<span class="string">"en"</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">head</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">meta</span> <span class="attr">charset</span>=<span class="string">"utf-8"</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">title</span>&gt;</span>This is an HTML page<span class="tag">&lt;/<span class="name">title</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;/<span class="name">head</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">body</span>&gt;</span></span><br><span class="line">    <span class="comment">&lt;!-- content goes here --&gt;</span></span><br><span class="line">  <span class="tag">&lt;/<span class="name">body</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">html</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<p>As you can see, the whole document is wrapped in an <b>html</b> element. The content visible to the user is contained within the <b>body</b> element.</p>
+<p>Two elements remain a mystery at this point, though: the <b>DOCTYPE</b> and the <b>head</b>.</p>
+<h2 id="The-DOCTYPE"><a href="#The-DOCTYPE" class="headerlink" title="The DOCTYPE"></a>The DOCTYPE</h2><p>Once upon a time, in the halcyon days of the early internet, the pioneers of the Web invented the Document Type Definition (<abbr title="Document Type Definition">DTD</abbr>).</p>
+<p>The DTD was created to define valid elements of a document written in XML or another <abbr title="Standard Generalized Markup Language">SGML</abbr>-family language.</p>
+<p>HTML happens to be a member of the SGML family.</p>
+<p>The doctype was conceived as a set of rules that would allow things like machine parsing of HTML code for things like automated error checking.</p>
+<p>There were different doctypes for different versions of the HTML specification. They used to look something like this:</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&lt;!DOCTYPE <span class="meta-keyword">html</span> <span class="meta-keyword">PUBLIC</span> <span class="meta-string">"-//W3C//DTD XHTML 1.0 Transitional//EN"</span></span></span><br><span class="line"><span class="meta"><span class="meta-string">"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<p>Nowadays nobody cares about the doctype, but it still has to be there for browsers to properly apply standards to an HTML document. The shortest possible valid doctype for an HTML document is</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&lt;!DOCTYPE <span class="meta-keyword">html</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<p>Since that&#39;s the simplest way to meet the current standard, that&#39;s what we use.</p>
+<h2 id="The-head-element"><a href="#The-head-element" class="headerlink" title="The head element"></a>The head element</h2><p>The <b>head</b> element is a container for various types of metadata about the document.</p>
+<p>Most metadata is primarily written for machines. This is in contrast to the content held in the <b>body</b> element, which is primarily for human users.</p>
+<p>The rest of this article will go through various kinds of metadata you may find in HTML documents. It is not intended to be an exhaustive list.</p>
+<h1 id="The-document-language"><a href="#The-document-language" class="headerlink" title="The document language"></a>The document language</h1><p>The main language for the document is actually specified in the <b>lang</b> attribute for the <b>html</b> element:</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">html</span> <span class="attr">lang</span>=<span class="string">"en"</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<p>You can specify a language for any element, so a single document can have content in multiple languages. It&#39;s important to specify languages so the browser renders the content accurately.</p>
+<p>While you can define languages on any element, it&#39;s a best practice to define a main language on the <b>html</b> element to define the context for the whole document.</p>
+<h1 id="The-document-charset"><a href="#The-document-charset" class="headerlink" title="The document charset"></a>The document charset</h1><p>The document charset tells the browser how to decode its contents so when the document is rendered on screen it&#39;s readable. If the charset isn&#39;t set correctly, you could end up with a bunch of unreadable gobbeldygook on screen, and no one wants that.</p>
+<p>The most common character encoding is UTF-8, and most web servers and browsers make this their default charset.</p>
+<p>Nevertheless, it is wise to explicitly set the character encoding because you never know when exceptions may occur.</p>
+<h1 id="The-title-element"><a href="#The-title-element" class="headerlink" title="The title element"></a>The title element</h1><p>The title element tells the browser what title to display for the page in its tab. It may also be used by search engines for the link text in the search result entry.</p>
+<p>The title is <em>not</em> displayed on screen as part of the page&#39;s content, however. That needs to be set inside the document.</p>
+<h1 id="The-meta-element"><a href="#The-meta-element" class="headerlink" title="The meta element"></a>The meta element</h1><p>You&#39;ve already seen one way to use the <b>meta</b> element: defining the charset.</p>
+<p>The <b>meta</b> element is extremely versatile. It can simulate HTTP headers, which are normally set by the web server. It can also tell search engines and social networks how to display information about the page. It can convey information about the author or organization behind the page, and more.</p>
+<h2 id="Name-attribute"><a href="#Name-attribute" class="headerlink" title="Name attribute"></a>Name attribute</h2><p>Many <b>meta</b> elements have a <b>name</b> attribute. The <b>name</b> attribute specifies what kind of information it contains.</p>
+<p>One common <b>name</b> value is &quot;description,&quot; which contains the text blurb search engines use to describe the site on the listings page.</p>
+<p>Example: a search description</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">meta</span> <span class="attr">name</span>=<span class="string">"description"</span> <span class="attr">content</span>=<span class="string">"The MDN Web Docs site provides information about Open Web technologies</span></span></span><br><span class="line"><span class="tag"><span class="string">  including HTML, CSS, and APIs for both Web sites and progressive web apps."</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<p>Another is &quot;author,&quot; which you can use to identify the author and, if you want, give contact information.</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">meta</span> <span class="attr">name</span>=<span class="string">"author"</span> <span class="attr">content</span>=<span class="string">"Jason Barr (me@jasonbarr.dev)&gt;</span></span></span><br></pre></td></tr></table></figure>
+
+<p>The &quot;viewport&quot; meta tag lets developers control the virtual size and scale of a device&#39;s screen size. This lets them optimize their app&#39;s user interface for different kinds of screens. That allows them to build responsive UIs that scale to different screen sizes and resolutions.</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">meta</span> <span class="attr">name</span>=<span class="string">"viewport"</span> <span class="attr">content</span>=<span class="string">"width=device-width, initial-scale=1"</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<h2 id="Content-attribute"><a href="#Content-attribute" class="headerlink" title="Content attribute"></a>Content attribute</h2><p>The <b>content</b> attribute holds the information described by the element&#39;s <b>name</b> or another attribute. See the examples above.</p>
+<h2 id="Http-equiv-attribute"><a href="#Http-equiv-attribute" class="headerlink" title="Http-equiv attribute"></a>Http-equiv attribute</h2><p>The <b>http-equiv</b> attribute emulates an HTTP header.</p>
+<p>One common use for this is to force the page to refresh or redirect.</p>
+<p>Example: redirect the user to medium.com after 2 seconds</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">meta</span> <span class="attr">http-equiv</span>=<span class="string">"refresh"</span> <span class="attr">content</span>=<span class="string">"2;url=http://medium.com/"</span> /&gt;</span></span><br></pre></td></tr></table></figure>
+
+<p>Note that some users have their browsers set to ignore meta redirects.</p>
+<h2 id="Search-engine-metadata"><a href="#Search-engine-metadata" class="headerlink" title="Search engine metadata"></a>Search engine metadata</h2><p>In addition to the &quot;description&quot; metadata, search crawlers may use other kinds of metadata. For example, you can tell crawlers not to index your page with a <b>meta</b> element.</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">meta</span> <span class="attr">name</span>=<span class="string">"robots"</span> <span class="attr">content</span>=<span class="string">"noindex"</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<p>Note that this will only prevent them from indexing the single page it&#39;s on, not your entire site. For that you&#39;ll need a <i>robots.txt</i> file.</p>
+<p>It will also not keep a crawler from following links to index other pages you&#39;ve linked to from your page. If you want it to not follow links, add &quot;nofollow&quot; to the above meta element.</p>
+<p>It used to be common practice to specify a &quot;keywords&quot; meta element so you could inform search engines of relevant categories for your page. Unfortunately, some people would stuff their keyword meta tags full of hundreds of spammy keywords, rendering them largely useless. Modern search crawlers largely ignore this tag.</p>
+<h2 id="Social-media-metadata"><a href="#Social-media-metadata" class="headerlink" title="Social media metadata"></a>Social media metadata</h2><p>Some social media sites use proprietary metadata to enhance the user experience when sharing content on their sites or apps.</p>
+<p>For example, Facebook has their own Open Graph protocol. Twitter has their own format, as do a few other sites.</p>
+<p>Here&#39;s the current Open Graph metadata as of the exact time I&#39;m typing this article:</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">meta</span> <span class="attr">property</span>=<span class="string">"og:type"</span> <span class="attr">content</span>=<span class="string">"article"</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">meta</span> <span class="attr">property</span>=<span class="string">"og:title"</span> <span class="attr">content</span>=<span class="string">"HTML document structure, head element, and metadata"</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">meta</span> <span class="attr">property</span>=<span class="string">"og:url"</span> <span class="attr">content</span>=<span class="string">"https://exocortex.jasonbarr.dev/html-head-element-metadata/index.html"</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">meta</span> <span class="attr">property</span>=<span class="string">"og:site_name"</span> <span class="attr">content</span>=<span class="string">"exocortex"</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">meta</span> <span class="attr">property</span>=<span class="string">"og:description"</span> <span class="attr">content</span>=<span class="string">"It's not enough to just know how to mark up content using HTML. It's at least equally as important to know how to structure your document well and use the proper metadata. That will make sure"</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">meta</span> <span class="attr">property</span>=<span class="string">"og:locale"</span> <span class="attr">content</span>=<span class="string">"en_US"</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<h2 id="Other-metadata"><a href="#Other-metadata" class="headerlink" title="Other metadata"></a>Other metadata</h2><p>There are several other types of metadata that use the <b>meta</b> element, but the above examples cover the most common usage categories.</p>
+<h1 id="The-link-element"><a href="#The-link-element" class="headerlink" title="The link element"></a>The link element</h1><p>It would be easy to think the <b>link</b> element is similar to the <b>a</b> element in defining a link that takes you to a different file. In reality, it&#39;s more like the opposite: the <b>link</b> element could be said to bring outside files into the current document.</p>
+<p>Or, more accurately, the <b>link</b> element specifies relationships between the current page and an external resource of some kind.</p>
+<p>The simplest use of <b>link</b> has two attributes: <b>rel</b> and <b>href</b>. The <b>rel</b> attribute defines the relationship, and <b>href</b> gives the URL for the resource.</p>
+<p>The two most common uses of <b>link</b> are to import icons and stylesheets.</p>
+<h2 id="Icons"><a href="#Icons" class="headerlink" title="Icons"></a>Icons</h2><p>Several clients display icons for a website or app. The most common is the favicon, which is visible in the browser tab a page is loaded in. It may also be shown with a page&#39;s title in your bookmarks, like so:</p>
+<img src="https://mdn.mozillademos.org/files/12351/bookmark-favicon.png" class="" title="Source: Mozilla Developer Network" alt="A Firefox favicon in a browser bookmarks panel">
+
+<p>A favicon link looks something like this:</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">link</span> <span class="attr">rel</span>=<span class="string">"icon"</span> <span class="attr">href</span>=<span class="string">"favicon.ico"</span> <span class="attr">type</span>=<span class="string">"image/x-icon"</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<p>Different devices may use larger icons, icons with higher resolution, and so on. Several Android and Apple devices have their own preferred icon sizes.</p>
+<h2 id="Stylesheets"><a href="#Stylesheets" class="headerlink" title="Stylesheets"></a>Stylesheets</h2><p>You also use <b>link</b> to connect an external stylesheet to your page. Assuming you&#39;re not just planning to use the default browser styles for your web apps, this is pretty important.</p>
+<p>You can connect as many stylesheets as you need. Just remember that each file will have to be downloaded, which adds to the amount of time it takes your app to load and render.</p>
+<p>Styles will be applied in the order their links are defined, so if there are conflicts a style in the last linked stylesheet will override one from the first. This can be useful if you&#39;re using a CSS library and want to override some of its styles.</p>
+<p>Set <b>rel</b> to &quot;stylesheet&quot; to load a stylesheet:</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">link</span> <span class="attr">rel</span>=<span class="string">"stylesheet"</span> <span class="attr">href</span>=<span class="string">"css/style.css"</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<h1 id="Loading-JavaScript-in-the-head"><a href="#Loading-JavaScript-in-the-head" class="headerlink" title="Loading JavaScript in the head"></a>Loading JavaScript in the head</h1><p>You can load JavaScript in either the <b>head</b> or <b>body</b>. The reasons you might do one or the other are beyond the scope of this article, but you use the <b>script</b> element the same either way.</p>
+<p>You can use the <b>src</b> attribute to connect an external JavaScript file or define your script inline between the opening and closing <b>script</b> tags, but you can&#39;t do both with the same element.</p>
+<p>Example: loading an external script file</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">script</span> <span class="attr">src</span>=<span class="string">"js/scripts.js"</span>&gt;</span><span class="tag">&lt;/<span class="name">script</span>&gt;</span> <span class="comment">&lt;!-- note that you MUST have a closing tag --&gt;</span></span><br></pre></td></tr></table></figure>
+
+<p>Example: using inline JavaScript</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">script</span>&gt;</span></span><br><span class="line"><span class="javascript">  <span class="keyword">const</span> helloElem = <span class="built_in">document</span>.getElementById(<span class="string">"say-hello"</span>);</span></span><br><span class="line"><span class="javascript">  <span class="keyword">const</span> sayHello = <span class="function"><span class="params">name</span> =&gt;</span> helloElem.textContent = <span class="string">`Hello, <span class="subst">$&#123;name&#125;</span>!`</span>;</span></span><br><span class="line"></span><br><span class="line"><span class="actionscript">  sayHello(<span class="string">"Jason"</span>);</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<p>There&#39;s a lot more you can put into your document <b>head</b>, but we&#39;ve covered most of the common uses.</p>
+
+    </div>
+
+    
+    
+    
+        
+
+<div>
+<ul class="post-copyright">
+  <li class="post-copyright-author">
+    <strong>Post author:  </strong>Jason Barr
+  </li>
+  <li class="post-copyright-link">
+    <strong>Post link: </strong>
+    <a href="https://exocortex.jasonbarr.dev/html-head-element-metadata/" title="HTML document structure, head element, and metadata">https://exocortex.jasonbarr.dev/html-head-element-metadata/</a>
+  </li>
+  <li class="post-copyright-license">
+    <strong>Copyright Notice:  </strong>All articles in this blog are licensed under <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" rel="noopener" target="_blank"><i class="fa fa-fw fa-creative-commons"></i>BY-NC-SA</a> unless stating additionally.
+  </li>
+</ul>
+</div>
+
+
+      <footer class="post-footer">
+          <div class="post-tags">
+              <a href="/tags/web-development/" rel="tag"># web development</a>
+              <a href="/tags/feynman-technique/" rel="tag"># feynman technique</a>
+          </div>
+
+        
+
+
+        
+    <div class="post-nav">
+      <div class="post-nav-item">
+    <a href="/html-links/" rel="prev" title="Creating links: tips and best practices">
+      <i class="fa fa-chevron-left"></i> Creating links: tips and best practices
+    </a></div>
+      <div class="post-nav-item"></div>
+    </div>
+      </footer>
+    
+  </article>
+  
+  
+  
+
+  </div>
+
+
+          </div>
+          
+
+<script>
+  window.addEventListener('tabs:register', () => {
+    let activeClass = CONFIG.comments.activeClass;
+    if (CONFIG.comments.storage) {
+      activeClass = localStorage.getItem('comments_active') || activeClass;
+    }
+    if (activeClass) {
+      let activeTab = document.querySelector(`a[href="#comment-${activeClass}"]`);
+      if (activeTab) {
+        activeTab.click();
+      }
+    }
+  });
+  if (CONFIG.comments.storage) {
+    window.addEventListener('tabs:click', event => {
+      if (!event.target.matches('.tabs-comment .tab-content .tab-pane')) return;
+      let commentClass = event.target.classList[1];
+      localStorage.setItem('comments_active', commentClass);
+    });
+  }
+</script>
+
+        </div>
+          
+  
+  <div class="toggle sidebar-toggle">
+    <span class="toggle-line toggle-line-first"></span>
+    <span class="toggle-line toggle-line-middle"></span>
+    <span class="toggle-line toggle-line-last"></span>
+  </div>
+
+  <aside class="sidebar">
+    <div class="sidebar-inner">
+
+      <ul class="sidebar-nav motion-element">
+        <li class="sidebar-nav-toc">
+          Table of Contents
+        </li>
+        <li class="sidebar-nav-overview">
+          Overview
+        </li>
+      </ul>
+
+      <!--noindex-->
+      <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#HTML-document-structure"><span class="nav-number">1.</span> <span class="nav-text">HTML document structure</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#The-DOCTYPE"><span class="nav-number">1.1.</span> <span class="nav-text">The DOCTYPE</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#The-head-element"><span class="nav-number">1.2.</span> <span class="nav-text">The head element</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#The-document-language"><span class="nav-number">2.</span> <span class="nav-text">The document language</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#The-document-charset"><span class="nav-number">3.</span> <span class="nav-text">The document charset</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#The-title-element"><span class="nav-number">4.</span> <span class="nav-text">The title element</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#The-meta-element"><span class="nav-number">5.</span> <span class="nav-text">The meta element</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#Name-attribute"><span class="nav-number">5.1.</span> <span class="nav-text">Name attribute</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Content-attribute"><span class="nav-number">5.2.</span> <span class="nav-text">Content attribute</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Http-equiv-attribute"><span class="nav-number">5.3.</span> <span class="nav-text">Http-equiv attribute</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Search-engine-metadata"><span class="nav-number">5.4.</span> <span class="nav-text">Search engine metadata</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Social-media-metadata"><span class="nav-number">5.5.</span> <span class="nav-text">Social media metadata</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Other-metadata"><span class="nav-number">5.6.</span> <span class="nav-text">Other metadata</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#The-link-element"><span class="nav-number">6.</span> <span class="nav-text">The link element</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#Icons"><span class="nav-number">6.1.</span> <span class="nav-text">Icons</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Stylesheets"><span class="nav-number">6.2.</span> <span class="nav-text">Stylesheets</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Loading-JavaScript-in-the-head"><span class="nav-number">7.</span> <span class="nav-text">Loading JavaScript in the head</span></a></li></ol></div>
+      </div>
+      <!--/noindex-->
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <img class="site-author-image" itemprop="image" alt="Jason Barr"
+      src="https://avatars2.githubusercontent.com/u/19394818">
+  <p class="site-author-name" itemprop="name">Jason Barr</p>
+  <div class="site-description" itemprop="description">the extended brain of jason barr</div>
+</div>
+<div class="site-state-wrap motion-element">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+          <a href="/archives/">
+        
+          <span class="site-state-item-count">5</span>
+          <span class="site-state-item-name">posts</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+            <a href="/categories/">
+          
+        <span class="site-state-item-count">5</span>
+        <span class="site-state-item-name">categories</span></a>
+      </div>
+      <div class="site-state-item site-state-tags">
+        <span class="site-state-item-count">2</span>
+        <span class="site-state-item-name">tags</span>
+      </div>
+  </nav>
+</div>
+  <div class="links-of-author motion-element">
+      <span class="links-of-author-item">
+        <a href="https://github.com/jasonsbarr" title="GitHub → https:&#x2F;&#x2F;github.com&#x2F;jasonsbarr" rel="noopener" target="_blank"><i class="fa fa-fw fa-github"></i>GitHub</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://twitter.com/jasonsbarr" title="Twitter → https:&#x2F;&#x2F;twitter.com&#x2F;jasonsbarr" rel="noopener" target="_blank"><i class="fa fa-fw fa-twitter"></i>Twitter</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="/atom.xml" title="RSS → &#x2F;atom.xml"><i class="fa fa-fw fa-rss"></i>RSS</a>
+      </span>
+  </div>
+  <div class="cc-license motion-element" itemprop="license">
+    <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" class="cc-opacity" rel="noopener" target="_blank"><img src="/images/cc-by-nc-sa.svg" alt="Creative Commons"></a>
+  </div>
+
+
+
+      </div>
+
+    </div>
+  </aside>
+  <div id="sidebar-dimmer"></div>
+
+
+      </div>
+    </main>
+
+    <footer class="footer">
+      <div class="footer-inner">
+        
+
+<div class="copyright">
+  
+  &copy; 
+  <span itemprop="copyrightYear">2020</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Jason Barr</span>
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item-icon">
+      <i class="fa fa-area-chart"></i>
+    </span>
+    <span title="Symbols count total">30k</span>
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item-icon">
+      <i class="fa fa-coffee"></i>
+    </span>
+    <span title="Reading time total">28 mins.</span>
+</div>
+
+        
+
+
+
+
+
+
+
+
+      </div>
+    </footer>
+  </div>
+
+  
+  <script src="/lib/anime.min.js"></script>
+  <script src="/lib/velocity/velocity.min.js"></script>
+  <script src="/lib/velocity/velocity.ui.min.js"></script>
+
+<script src="/js/utils.js"></script>
+
+<script src="/js/motion.js"></script>
+
+
+<script src="/js/schemes/muse.js"></script>
+
+
+<script src="/js/next-boot.js"></script>
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+
+</body>
+</html>
