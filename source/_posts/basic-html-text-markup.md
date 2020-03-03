@@ -21,7 +21,7 @@ Headings and paragraphs are the most basic way to structure text in HTML. Lists 
 
 Headings and paragraphs give textual content a structural hierarchy from the top-level heading down to the bottom-level text itself.
 
-Headings start with <b>h1</b> and include numbers all the way to <b>h6</b>. The paragraph element is simply a <b>p</b>.
+Headings start with <b>h1</b> and include numbers all the way to <b>h6</b>. The paragraph element is simply <b>p</b>.
 
 ### Heading and paragraph examples
 
