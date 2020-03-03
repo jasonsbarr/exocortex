@@ -1,4 +1,0 @@
----
-title: computer-science
-tags:
----
