@@ -5,8 +5,7 @@ tags:
   - feynman technique
 categories:
   - computer science
-  - programming
-    - python
+  - [programming, python]
 date: 2020-03-03 10:57:03
 ---
 
