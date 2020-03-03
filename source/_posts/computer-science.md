@@ -44,7 +44,11 @@ When I say "tools" I mean the things most people are likely to commonly associat
 
 Tools are vital, but they pale in comparison to the tactics that empower constructive use of those very tools in the first place.
 
-Tactics include problem solving strategies and methods to break down larger problems into smaller, more-easily solved ones. It's the ability to build a conceptual model that connects the current problem to ones the scientist has encountered before, so they can use that experience as a jumping-off point for what they're working on now. It's the ability to find defects in one's process for finding solutions so they can improve their ability to create the things they need to engineer at least a provisional solution to the current problem so they can continue iterating on their solution until they've arrived at a comprehensive result.
+Tactics include problem solving strategies and methods to break down larger problems into smaller, more-easily solved ones.
+
+It's the ability to build a conceptual model that connects the current problem to ones the scientist has encountered before, so they can use that experience as a jumping-off point for what they're working on now.
+
+It's the ability to find defects in one's process for finding solutions so they can improve their ability to create the things they need to engineer at least a provisional solution to the current problem so they can continue iterating on their solution until they've arrived at a comprehensive result.
 
 # Programs and programming
 
